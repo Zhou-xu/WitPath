@@ -1,0 +1,133 @@
+spring:
+  datasource:
+    # 核心业务库：WitPath（此前误指向 sky_take_out，已修正）
+    url: jdbc:mysql://${WITPATH_DB_HOST:127.0.0.1}:${WITPATH_DB_PORT:3306}/WitPath?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&allowMultiQueries=true&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${WITPATH_DB_USER:root}
+    password: ${WITPATH_DB_PASSWORD:123456}
+    hikari:
+      pool-name: WitPathHikariPool
+      minimum-idle: 5
+      maximum-pool-size: 20
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  data:
+    redis:
+      host: ${WITPATH_REDIS_HOST:127.0.0.1}
+      port: ${WITPATH_REDIS_PORT:6379}
+      database: 0
+      timeout: 3000
+      # Redisson 连接池配置
+      connection-minimum-idle-size: 4
+      connection-pool-size: 16
+      retry-attempts: 3
+      retry-interval: 500
+      pool:
+        min-idle: 2
+        max-size: 16
+        max-wait: 3000
+    servlet:
+      application-display-name: server
+
+  rabbitmq:
+    host: ${WITPATH_MQ_HOST:127.0.0.1}
+    port: ${WITPATH_MQ_PORT:5672}
+    username: ${WITPATH_MQ_USER:admin}
+    password: ${WITPATH_MQ_PASSWORD:admin123}
+    virtual-host: /
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    # 连接不可用时快速失败，便于业务层降级到本地执行器
+    connection-timeout: 3000
+    listener:
+      simple:
+        prefetch: 4
+        retry:
+          enabled: true
+          initial-interval: 1000
+          max-attempts: 3
+          multiplier: 2
+
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 25MB
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # 与 JwtUtil 签名密钥保持一致（HS256）
+          secret: ${JWT_SECRET:abcdefghijklmnopqrstuvwxyz123456abcdefghijklmnopqrstuvwxyz123456}
+
+jwt:
+  secret: ${JWT_SECRET:abcdefghijklmnopqrstuvwxyz123456abcdefghijklmnopqrstuvwxyz123456}
+  expire: 604800000 # 7 天，单位 ms
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: is_deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  mapper-locations: classpath*:Mapper/**/*.xml
+
+logging:
+  level:
+    root: info
+    com.witpath: info
+    com.witpath.mapper: debug
+
+witpath:
+  security:
+    # 用户个人 API Key 的加密主密钥来自环境变量 APP_SECRET_KEY（见 ApiKeyMasterKeyProvider），
+    # 不在这里配置，避免密钥被写进配置文件或误提交到仓库。
+    # 解锁窗口内是否在 Redis 缓存用户明文密码；置 false 则只缓存解锁标记（更安全）
+    cache-password-plaintext: ${WITPATH_CACHE_PASSWORD_PLAINTEXT:true}
+    # 解锁态与解密结果缓存的有效期（秒），默认 300 秒 = 5 分钟
+    unlock-ttl-seconds: ${WITPATH_UNLOCK_TTL:300}
+  mq:
+    # RabbitMQ 不可用（未安装/未启动）时置为 false，任务将走本地线程池执行
+    enabled: true
+  ai:
+    # FastAPI AI 服务地址
+    base-url: ${WITPATH_AI_BASE_URL:http://127.0.0.1:8000}
+    timeout-ms: 180000
+    health-timeout-ms: 3000
+    # 回调令牌（原 key 误写为“callback-token，”，导致环境变量覆盖一直不生效）
+    callback-token: ${WITPATH_AI_CALLBACK_TOKEN:witpath-internal-token}
+  storage:
+    # local：本地磁盘；oss：阿里云 OSS（需要正确配置 OSS 凭证）
+    type: ${WITPATH_STORAGE_TYPE:local}
+    local-dir: ${WITPATH_STORAGE_DIR:./storage/materials}
+    max-file-size: 20971520
+    avatar:
+      # public：头像 bucket 为公共读，直接返回 OSS 永久直链
+      # proxy：bucket 保持私有，头像由后端 /api/user/avatar/raw 带凭证取流输出
+      access-mode: ${WITPATH_AVATAR_ACCESS:public}
+    oss:
+      # 外网访问使用公网域名；内网域名仅在同地域 ECS 上可用
+      endpoint: ${OSS_ENDPOINT:oss-cn-shanghai.aliyuncs.com}
+      access-key-id: ${OSS_ACCESS_KEY_ID:}
+      access-key-secret: ${OSS_ACCESS_KEY_SECRET:}
+      # 学习资料 bucket（私有）
+      bucket-name: ${OSS_BUCKET_NAME:witpath-document}
+      # 头像专用 bucket（公共读）
+      avatar-bucket-name: ${OSS_AVATAR_BUCKET:witpath-avatar}
+      signature-ttl-seconds: 900
+
+---
+# 阿里云 OSS 凭据等敏感配置放在不被 Git 跟踪的本地文件中：
+#   backend/WitPath/server/config/application-secret.yaml
+# 该文件已加入 .gitignore，团队内请通过环境变量或配置中心下发。

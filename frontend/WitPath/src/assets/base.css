@@ -1,0 +1,151 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+}
+
+/* ============================================================
+   WitPath 设计令牌 —— 首页视觉基调
+   暖奶油底 + 墨蓝灰文字 + 陶土橙点缀，山系晨光的克制配色
+   ============================================================ */
+:root {
+  /* 背景 */
+  --wp-bg: #faf7f2;
+  --wp-bg-soft: #f5f0e9;
+  --wp-bg-deep: #efe8de;
+
+  /* 文字 */
+  --wp-ink: #22303c; /* 标题：深海墨蓝 */
+  --wp-ink-soft: #46586a; /* 次级强调 */
+  --wp-body: #5f7280; /* 正文 */
+  --wp-muted: #8b9aa6; /* 辅助说明 */
+
+  /* 点缀色 */
+  --wp-accent: #c96a45; /* 陶土橙 */
+  --wp-accent-deep: #b25a38;
+  --wp-accent-soft: #e8a37e;
+  --wp-slate: #4e6b7e; /* 山岩青灰 */
+  --wp-slate-deep: #33505f;
+
+  /* 线条与阴影 */
+  --wp-line: rgba(34, 48, 60, 0.08);
+  --wp-line-strong: rgba(34, 48, 60, 0.14);
+  --wp-shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04), 0 2px 8px rgba(16, 24, 40, 0.04);
+  --wp-shadow-md: 0 2px 4px rgba(16, 24, 40, 0.04), 0 12px 32px rgba(16, 24, 40, 0.08);
+  --wp-shadow-lg: 0 4px 8px rgba(16, 24, 40, 0.05), 0 24px 56px rgba(16, 24, 40, 0.12);
+  --wp-shadow-accent: 0 8px 24px rgba(201, 106, 69, 0.28);
+
+  /* 圆角 */
+  --wp-radius-sm: 10px;
+  --wp-radius-md: 16px;
+  --wp-radius-lg: 24px;
+
+  /* 字体 */
+  --wp-font-sans:
+    'HarmonyOS Sans SC', 'PingFang SC', 'MiSans', 'Microsoft YaHei', 'Source Han Sans SC',
+    'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --wp-font-serif: 'Songti SC', 'STSong', 'Source Han Serif SC', 'Noto Serif SC', Georgia, serif;
+
+  /* 布局 */
+  --wp-max-w: 1200px;
+  --wp-gutter: 60px;
+  --wp-nav-h: 64px;
+  /* 抽屉面板非滚动内边距合计（上 padding + 下 padding）：用于计算半屏滚动区高度 */
+  --wp-sheet-chrome: 106px;
+
+  /* 缓动 */
+  --wp-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* semantic color variables for this project */
+  --color-background: var(--wp-bg);
+  --color-background-soft: var(--wp-bg-soft);
+  --color-background-mute: var(--wp-bg-deep);
+
+  --color-border: var(--wp-line);
+  --color-border-hover: var(--wp-line-strong);
+
+  --color-heading: var(--wp-ink);
+  --color-text: var(--wp-ink);
+
+  --section-gap: 160px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* 一屏模式：仅首页生效（IndexView 挂载时给 html/body 加 .wp-index）
+   否则工作台页面将无法滚动 */
+html.wp-index,
+body.wp-index {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  color: var(--wp-body);
+  background: var(--wp-bg);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family: var(--wp-font-sans);
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  color: var(--wp-ink);
+  line-height: 1.3;
+}
+
+/* 品牌色文本选中 */
+::selection {
+  background: rgba(201, 106, 69, 0.18);
+  color: var(--wp-ink);
+}
+
+/* 细腻的滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 48, 60, 0.16);
+  border-radius: 999px;
+  border: 3px solid var(--wp-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 48, 60, 0.28);
+}

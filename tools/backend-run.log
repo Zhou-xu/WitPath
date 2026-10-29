@@ -1,0 +1,723 @@
+﻿Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-23T21:10:06.196+08:00  INFO 23676 --- [server] [           main] com.witpath.ServerApplication            : Starting ServerApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 23676 (D:\Desktop\grass\学途知行AI协作平台\backend\WitPath\server\target\server-0.0.1-SNAPSHOT.jar started by 周旭 in D:\Desktop\grass\学途知行AI协作平台\backend\WitPath)
+2026-10-23T21:10:06.200+08:00  INFO 23676 --- [server] [           main] com.witpath.ServerApplication            : The following 2 profiles are active: "dev", "secret"
+2026-10-23T21:10:11.619+08:00  INFO 23676 --- [server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-10-23T21:10:11.693+08:00  INFO 23676 --- [server] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-23T21:10:11.694+08:00  INFO 23676 --- [server] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-10-23T21:10:11.831+08:00  INFO 23676 --- [server] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-23T21:10:11.838+08:00  INFO 23676 --- [server] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5562 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.11 
+2026-10-23T21:10:15.506+08:00  INFO 23676 --- [server] [           main] org.redisson.Version                     : Redisson 3.27.2
+2026-10-23T21:10:17.090+08:00  INFO 23676 --- [server] [isson-netty-1-4] o.redisson.connection.ConnectionsHolder  : 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2026-10-23T21:10:17.267+08:00  INFO 23676 --- [server] [sson-netty-1-11] o.redisson.connection.ConnectionsHolder  : 4 connections initialized for 127.0.0.1/127.0.0.1:6379
+2026-10-23T21:10:18.371+08:00  INFO 23676 --- [server] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-10-23T21:10:18.403+08:00  INFO 23676 --- [server] [           main] c.witpath.storage.LocalStorageService    : 本地资料存储目录：D:\Desktop\grass\学途知行AI协作平台\backend\WitPath\storage\materials
+2026-10-23T21:10:18.924+08:00  INFO 23676 --- [server] [           main] com.witpath.config.WebConfig             : 本地资料静态资源映射：/files/** -> file:D:/Desktop/grass/学途知行AI协作平台/backend/WitPath/./storage/materials/
+2026-10-23T21:10:20.039+08:00  INFO 23676 --- [server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-10-23T21:10:20.048+08:00  INFO 23676 --- [server] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T21:10:20.262+08:00  INFO 23676 --- [server] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#3ef089ce:0/SimpleConnection@7c0a6f62 [delegate=amqp://admin@127.0.0.1:5672/, localPort=49294]
+2026-10-23T21:10:20.990+08:00  INFO 23676 --- [server] [           main] com.witpath.ServerApplication            : Started ServerApplication in 15.835 seconds (process running for 16.922)
+2026-10-23T21:10:45.908+08:00  INFO 23676 --- [server] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-23T21:10:45.908+08:00  INFO 23676 --- [server] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-23T21:10:45.909+08:00  INFO 23676 --- [server] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-23T21:11:04.194+08:00  INFO 23676 --- [server] [nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : WitPathHikariPool - Starting...
+2026-10-23T21:11:04.857+08:00  INFO 23676 --- [server] [nio-8080-exec-4] com.zaxxer.hikari.pool.HikariPool        : WitPathHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ae372fc
+2026-10-23T21:11:04.860+08:00  INFO 23676 --- [server] [nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : WitPathHikariPool - Start completed.
+2026-10-23T21:11:04.871+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:04.952+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:05.081+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:05.386+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiConversationMapper.insert   : ==>  Preparing: INSERT INTO ai_conversation ( user_id, title, message_count, last_message_at, created_at, updated_at, is_deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ? )
+2026-10-23T21:11:05.389+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiConversationMapper.insert   : ==> Parameters: 2(Long), 你好，只回复两个字：收到(String), 0(Integer), 2026-10-23T21:11:05.271383800(LocalDateTime), 2026-10-23T21:11:05.386370500(LocalDateTime), 2026-10-23T21:11:05.386370500(LocalDateTime), 0(Integer)
+2026-10-23T21:11:05.447+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiConversationMapper.insert   : <==    Updates: 1
+2026-10-23T21:11:05.454+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.AiMessageMapper.insert  : ==>  Preparing: INSERT INTO ai_message ( conversation_id, user_id, role, content, tokens_used, created_at, updated_at, is_deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-23T21:11:05.454+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.AiMessageMapper.insert  : ==> Parameters: 8(Long), 2(Long), user(String), 你好，只回复两个字：收到(String), 0(Integer), 2026-10-23T21:11:05.452852700(LocalDateTime), 2026-10-23T21:11:05.452852700(LocalDateTime), 0(Integer)
+2026-10-23T21:11:05.504+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.AiMessageMapper.insert  : <==    Updates: 1
+2026-10-23T21:11:05.504+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:05.504+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:05.531+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:05.606+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiMessageMapper.selectList    : ==>  Preparing: SELECT id,conversation_id,user_id,role,content,referenced,tokens_used,created_at,updated_at,is_deleted FROM ai_message WHERE (conversation_id = ?) ORDER BY id DESC LIMIT 10
+2026-10-23T21:11:05.607+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiMessageMapper.selectList    : ==> Parameters: 8(Long)
+2026-10-23T21:11:05.633+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiMessageMapper.selectList    : <==      Total: 1
+2026-10-23T21:11:05.683+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyRecordMapper.selectList  : ==>  Preparing: SELECT id,study_date,duration_minutes,subject,focus_score,goal_id,task_id,title,content,start_at,end_at,outcome,tags FROM study_record WHERE (user_id = ? AND study_date >= ?) ORDER BY study_date DESC
+2026-10-23T21:11:05.683+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyRecordMapper.selectList  : ==> Parameters: 2(Long), 2025-10-23(LocalDate)
+2026-10-23T21:11:05.711+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyRecordMapper.selectList  : <==      Total: 0
+2026-10-23T21:11:05.723+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyGoalMapper.selectList    : ==>  Preparing: SELECT id,user_id,title,description,subject,priority,status,start_date,end_date,target_hours,actual_hours,task_total,task_done,progress,created_at,updated_at,is_deleted FROM study_goal WHERE (user_id = ? AND status = ?)
+2026-10-23T21:11:05.723+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyGoalMapper.selectList    : ==> Parameters: 2(Long), 1(Integer)
+2026-10-23T21:11:05.756+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyGoalMapper.selectList    : <==      Total: 0
+2026-10-23T21:11:05.757+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyTaskMapper.selectList    : ==>  Preparing: SELECT id,user_id,goal_id,title,description,status,priority,plan_date,due_date,estimated_minutes,actual_minutes,completed_at,sort_order,created_at,updated_at,is_deleted FROM study_task WHERE (user_id = ?)
+2026-10-23T21:11:05.759+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyTaskMapper.selectList    : ==> Parameters: 2(Long)
+2026-10-23T21:11:05.782+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyTaskMapper.selectList    : <==      Total: 0
+2026-10-23T21:11:05.799+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyTaskMapper.selectList    : ==>  Preparing: SELECT id,user_id,goal_id,title,description,status,priority,plan_date,due_date,estimated_minutes,actual_minutes,completed_at,sort_order,created_at,updated_at,is_deleted FROM study_task WHERE (user_id = ? AND status IN (?,?,?)) ORDER BY due_date ASC,priority DESC LIMIT 6
+2026-10-23T21:11:05.799+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyTaskMapper.selectList    : ==> Parameters: 2(Long), 1(Integer), 2(Integer), 4(Integer)
+2026-10-23T21:11:05.827+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyTaskMapper.selectList    : <==      Total: 0
+2026-10-23T21:11:05.830+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyRecordMapper.selectList  : ==>  Preparing: SELECT id,user_id,goal_id,task_id,title,content,subject,study_date,start_at,end_at,duration_minutes,focus_score,outcome,tags,created_at,updated_at,is_deleted FROM study_record WHERE (user_id = ?) ORDER BY study_date DESC,id DESC LIMIT 5
+2026-10-23T21:11:05.830+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyRecordMapper.selectList  : ==> Parameters: 2(Long)
+2026-10-23T21:11:05.857+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.StudyRecordMapper.selectList  : <==      Total: 0
+2026-10-23T21:11:05.869+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (user_id = ? AND status = ?) ORDER BY id DESC LIMIT 1
+2026-10-23T21:11:05.869+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 2(Long), 2(Integer)
+2026-10-23T21:11:05.901+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:11:05.906+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.ReminderMapper.selectCount    : ==>  Preparing: SELECT COUNT( * ) AS total FROM reminder WHERE (user_id = ? AND status = ?)
+2026-10-23T21:11:05.906+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.ReminderMapper.selectCount    : ==> Parameters: 2(Long), 0(Integer)
+2026-10-23T21:11:05.938+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.ReminderMapper.selectCount    : <==      Total: 1
+2026-10-23T21:11:06.039+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.UserApiKeyMapper.selectList   : ==>  Preparing: SELECT id,user_id,provider,api_key_enc,base_url,model,embedding_provider,embedding_model,embedding_api_key_enc,embedding_base_url,status,use_default_api,created_at,updated_at,is_deleted FROM user_api_key WHERE (user_id = ? AND is_deleted = ? AND status = ?) ORDER BY updated_at DESC LIMIT 1
+2026-10-23T21:11:06.040+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.UserApiKeyMapper.selectList   : ==> Parameters: 2(Long), 0(Integer), 1(Integer)
+2026-10-23T21:11:06.065+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.UserApiKeyMapper.selectList   : <==      Total: 0
+2026-10-23T21:11:09.435+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.AiMessageMapper.insert  : ==>  Preparing: INSERT INTO ai_message ( conversation_id, user_id, role, content, referenced, tokens_used, created_at, updated_at, is_deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-23T21:11:09.435+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.AiMessageMapper.insert  : ==> Parameters: 8(Long), 2(Long), assistant(String), 收到(String), [](String), 496(Integer), 2026-10-23T21:11:09.433235200(LocalDateTime), 2026-10-23T21:11:09.433235200(LocalDateTime), 0(Integer)
+2026-10-23T21:11:09.488+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.AiMessageMapper.insert  : <==    Updates: 1
+2026-10-23T21:11:09.495+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.m.AiConversationMapper.updateById    : ==>  Preparing: UPDATE ai_conversation SET title=?, message_count=?, last_message_at=?, updated_at=? WHERE id=?
+2026-10-23T21:11:09.495+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.m.AiConversationMapper.updateById    : ==> Parameters: 你好，只回复两个字：收到(String), 3(Integer), 2026-10-23T21:11:09.490083900(LocalDateTime), 2026-10-23T21:11:09.495635300(LocalDateTime), 8(Long)
+2026-10-23T21:11:09.546+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.m.AiConversationMapper.updateById    : <==    Updates: 1
+2026-10-23T21:11:09.644+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:09.647+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:09.675+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:09.703+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiConversationMapper.insert   : ==>  Preparing: INSERT INTO ai_conversation ( user_id, title, message_count, last_message_at, created_at, updated_at, is_deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ? )
+2026-10-23T21:11:09.703+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiConversationMapper.insert   : ==> Parameters: 2(Long), 我最近学习状态如何(String), 0(Integer), 2026-10-23T21:11:09.702300500(LocalDateTime), 2026-10-23T21:11:09.703982100(LocalDateTime), 2026-10-23T21:11:09.703982100(LocalDateTime), 0(Integer)
+2026-10-23T21:11:09.755+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiConversationMapper.insert   : <==    Updates: 1
+2026-10-23T21:11:09.757+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.AiMessageMapper.insert  : ==>  Preparing: INSERT INTO ai_message ( conversation_id, user_id, role, content, tokens_used, created_at, updated_at, is_deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-23T21:11:09.760+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.AiMessageMapper.insert  : ==> Parameters: 9(Long), 2(Long), user(String), 我最近学习状态如何(String), 0(Integer), 2026-10-23T21:11:09.757969(LocalDateTime), 2026-10-23T21:11:09.757969(LocalDateTime), 0(Integer)
+2026-10-23T21:11:09.810+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.AiMessageMapper.insert  : <==    Updates: 1
+2026-10-23T21:11:09.811+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:09.813+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:09.840+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:09.841+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiMessageMapper.selectList    : ==>  Preparing: SELECT id,conversation_id,user_id,role,content,referenced,tokens_used,created_at,updated_at,is_deleted FROM ai_message WHERE (conversation_id = ?) ORDER BY id DESC LIMIT 10
+2026-10-23T21:11:09.841+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiMessageMapper.selectList    : ==> Parameters: 9(Long)
+2026-10-23T21:11:09.870+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiMessageMapper.selectList    : <==      Total: 1
+2026-10-23T21:11:19.107+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.AiMessageMapper.insert  : ==>  Preparing: INSERT INTO ai_message ( conversation_id, user_id, role, content, referenced, tokens_used, created_at, updated_at, is_deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-23T21:11:19.109+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.AiMessageMapper.insert  : ==> Parameters: 9(Long), 2(Long), assistant(String), **数据概览**  
+- 总学习时长：0 分钟  
+- 近 7 天：每天均为 0 分钟  
+- 今日学习：0 分钟  
+- 连续学习：0 天  
+- 进行中目标：0 个  
+- 待办任务：0 个  
+- 平均专注度：0 / 5  
+
+**结论**  
+目前没有可评估的学习记录，学习状态处于“未启动/空窗期”，暂时无法判断趋势。
+
+**建议行动**  
+1. **先启动 15 分钟**：今天学 15 分钟即可，先打破 0 记录。  
+2. **设 1 个小目标**：例如“本周完成 3 次学习，每次 20 分钟”。  
+3. **建 1 个待办**：写下一个具体任务，如“看完第 1 章前 5 页”。  
+4. **打开专注记录**：学习时开启一次，积累第一条专注度数据。  
+
+先完成最小行动，后续我就能帮你分析状态和趋势。(String), [](String), 1290(Integer), 2026-10-23T21:11:19.107800600(LocalDateTime), 2026-10-23T21:11:19.107800600(LocalDateTime), 0(Integer)
+2026-10-23T21:11:19.155+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.AiMessageMapper.insert  : <==    Updates: 1
+2026-10-23T21:11:19.159+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.m.AiConversationMapper.updateById    : ==>  Preparing: UPDATE ai_conversation SET title=?, message_count=?, last_message_at=?, updated_at=? WHERE id=?
+2026-10-23T21:11:19.160+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.m.AiConversationMapper.updateById    : ==> Parameters: 我最近学习状态如何(String), 3(Integer), 2026-10-23T21:11:19.159433700(LocalDateTime), 2026-10-23T21:11:19.159433700(LocalDateTime), 9(Long)
+2026-10-23T21:11:19.209+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.m.AiConversationMapper.updateById    : <==    Updates: 1
+2026-10-23T21:11:19.279+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:19.280+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:19.306+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:19.359+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] com.witpath.mapper.AiTaskMapper.insert   : ==>  Preparing: INSERT INTO ai_task ( task_no, user_id, type, title, status, stage, stage_message, progress, request_json, created_at, updated_at, is_deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-23T21:11:19.360+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] com.witpath.mapper.AiTaskMapper.insert   : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long), STUDY_ANALYSIS(String), 学习态势分析(String), 0(Integer), queued(String), 已提交，等待调度(String), 0(Integer), {"userId":null,"taskNo":null,"taskType":"STUDY_ANALYSIS","question":null,"callbackUrl":null,"callbackToken":null,"profile":{"nickname":null,"studyStage":null,"studyGoal":null,"preferredTags":[]},"summary":{"rangeDays":14,"totalMinutes":0,"recordCount":0,"streakDays":0,"avgFocus":0,"from":null,"to":null},"goals":[],"tasks":[],"records":[],"materialSnippets":[],"userModelConfig":null}(String), 2026-10-23T21:11:19.358572300(LocalDateTime), 2026-10-23T21:11:19.358572300(LocalDateTime), 0(Integer)
+2026-10-23T21:11:19.410+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] com.witpath.mapper.AiTaskMapper.insert   : <==    Updates: 1
+2026-10-23T21:11:19.411+08:00  INFO 23676 --- [server] [nio-8080-exec-7] com.witpath.service.AiTaskService        : 提交 AI 任务：taskNo=3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6 userId=2 type=STUDY_ANALYSIS
+2026-10-23T21:11:19.588+08:00  INFO 23676 --- [server] [ntContainer#0-2] com.witpath.mq.TaskConsumers             : 消费 AI 任务消息：taskNo=3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6
+2026-10-23T21:11:19.589+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ?)
+2026-10-23T21:11:19.590+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String)
+2026-10-23T21:11:19.620+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:11:19.652+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ?)
+2026-10-23T21:11:19.656+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String)
+2026-10-23T21:11:19.687+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:11:19.693+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.updateById       : ==>  Preparing: UPDATE ai_task SET status=?, started_at=?, updated_at=? WHERE id=?
+2026-10-23T21:11:19.693+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.updateById       : ==> Parameters: 1(Integer), 2026-10-23T21:11:19.687143700(LocalDateTime), 2026-10-23T21:11:19.693913800(LocalDateTime), 4(Long)
+2026-10-23T21:11:19.748+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.updateById       : <==    Updates: 1
+2026-10-23T21:11:19.815+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:19.816+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:19.845+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:19.850+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.StudyGoalMapper.selectList    : ==>  Preparing: SELECT id,user_id,title,description,subject,priority,status,start_date,end_date,target_hours,actual_hours,task_total,task_done,progress,created_at,updated_at,is_deleted FROM study_goal WHERE (user_id = ?) ORDER BY priority DESC,end_date ASC LIMIT 20
+2026-10-23T21:11:19.850+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.StudyGoalMapper.selectList    : ==> Parameters: 2(Long)
+2026-10-23T21:11:19.877+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.StudyGoalMapper.selectList    : <==      Total: 0
+2026-10-23T21:11:19.881+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.StudyTaskMapper.selectList    : ==>  Preparing: SELECT id,user_id,goal_id,title,description,status,priority,plan_date,due_date,estimated_minutes,actual_minutes,completed_at,sort_order,created_at,updated_at,is_deleted FROM study_task WHERE (user_id = ?) ORDER BY due_date ASC LIMIT 100
+2026-10-23T21:11:19.882+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.StudyTaskMapper.selectList    : ==> Parameters: 2(Long)
+2026-10-23T21:11:19.911+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.StudyTaskMapper.selectList    : <==      Total: 0
+2026-10-23T21:11:19.917+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.StudyRecordMapper.selectList  : ==>  Preparing: SELECT study_date,title,subject,duration_minutes,focus_score,outcome FROM study_record WHERE (user_id = ? AND study_date >= ?) ORDER BY study_date DESC LIMIT 120
+2026-10-23T21:11:19.918+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.StudyRecordMapper.selectList  : ==> Parameters: 2(Long), 2026-10-10(LocalDate)
+2026-10-23T21:11:19.943+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.StudyRecordMapper.selectList  : <==      Total: 0
+2026-10-23T21:11:19.949+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.m.StudyMaterialMapper.selectList     : ==>  Preparing: SELECT id,user_id,name,original_name,file_type,storage_type,local_path,oss_bucket,oss_object_key,oss_url,file_size,subject,description,parse_status,vector_status,chunk_count,error_message,created_at,updated_at,is_deleted FROM study_material WHERE (user_id = ?) ORDER BY id DESC LIMIT 20
+2026-10-23T21:11:19.950+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.m.StudyMaterialMapper.selectList     : ==> Parameters: 2(Long)
+2026-10-23T21:11:19.985+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.m.StudyMaterialMapper.selectList     : <==      Total: 0
+2026-10-23T21:11:21.145+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ?)
+2026-10-23T21:11:21.146+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String)
+2026-10-23T21:11:21.176+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:11:21.178+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.updateById       : ==>  Preparing: UPDATE ai_task SET status=?, stage=?, stage_message=?, progress=?, updated_at=? WHERE id=?
+2026-10-23T21:11:21.180+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.updateById       : ==> Parameters: 1(Integer), data_collect(String), 已完成学习数据整理(String), 20(Integer), 2026-10-23T21:11:21.178917200(LocalDateTime), 4(Long)
+2026-10-23T21:11:21.236+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.updateById       : <==    Updates: 1
+2026-10-23T21:11:30.529+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ?)
+2026-10-23T21:11:30.530+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String)
+2026-10-23T21:11:30.558+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:11:30.560+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.updateById       : ==>  Preparing: UPDATE ai_task SET status=?, stage=?, stage_message=?, progress=?, updated_at=? WHERE id=?
+2026-10-23T21:11:30.561+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.updateById       : ==> Parameters: 1(Integer), analysis(String), 已完成学习态势分析(String), 40(Integer), 2026-10-23T21:11:30.560719700(LocalDateTime), 4(Long)
+2026-10-23T21:11:30.610+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.updateById       : <==    Updates: 1
+2026-10-23T21:11:32.395+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:32.396+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:32.424+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:32.428+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:11:32.430+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:11:32.457+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:11:35.502+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:35.504+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:35.540+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:35.543+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:11:35.543+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:11:35.575+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:11:38.638+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:38.639+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:38.665+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:38.668+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:11:38.669+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:11:38.775+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:11:41.861+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:41.863+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:41.984+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:41.986+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:11:41.986+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:11:42.015+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:11:45.068+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:45.069+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:45.094+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:45.094+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:11:45.094+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:11:45.146+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:11:48.196+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:48.197+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:48.227+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:48.229+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:11:48.229+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:11:48.254+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:11:51.292+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:51.292+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:51.321+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:51.324+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:11:51.325+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:11:51.353+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:11:54.395+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:54.395+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:54.422+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:54.422+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:11:54.422+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:11:54.456+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:11:57.551+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:11:57.551+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:11:57.577+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:11:57.578+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:11:57.581+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:11:57.630+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:12:00.715+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:12:00.715+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:12:00.746+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:12:00.749+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:12:00.749+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:12:00.777+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:12:03.813+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:12:03.813+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:12:03.841+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:12:03.844+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:12:03.844+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:12:03.875+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:12:06.483+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ?)
+2026-10-23T21:12:06.487+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String)
+2026-10-23T21:12:06.571+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:12:06.573+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.updateById       : ==>  Preparing: UPDATE ai_task SET status=?, stage=?, stage_message=?, progress=?, updated_at=? WHERE id=?
+2026-10-23T21:12:06.573+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.updateById       : ==> Parameters: 1(Integer), planning(String), 已生成 5 项学习计划(String), 60(Integer), 2026-10-23T21:12:06.573340100(LocalDateTime), 4(Long)
+2026-10-23T21:12:06.651+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.updateById       : <==    Updates: 1
+2026-10-23T21:12:06.892+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:12:06.892+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:12:06.926+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:12:06.928+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:12:06.928+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:12:06.959+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:12:10.016+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:12:10.019+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:12:10.125+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:12:10.128+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:12:10.129+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:12:10.248+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:12:13.296+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:12:13.298+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:12:13.327+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:12:13.330+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:12:13.332+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:12:13.360+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:12:16.494+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:12:16.494+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:12:16.556+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:12:16.558+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:12:16.558+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:12:16.593+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:12:19.650+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:12:19.651+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:12:19.680+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:12:19.684+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:12:19.684+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:12:19.713+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:12:20.406+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ?)
+2026-10-23T21:12:20.408+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String)
+2026-10-23T21:12:20.434+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:12:20.434+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.updateById       : ==>  Preparing: UPDATE ai_task SET status=?, stage=?, stage_message=?, progress=?, updated_at=? WHERE id=?
+2026-10-23T21:12:20.434+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.updateById       : ==> Parameters: 1(Integer), advice(String), 已生成改进建议(String), 90(Integer), 2026-10-23T21:12:20.434189900(LocalDateTime), 4(Long)
+2026-10-23T21:12:20.589+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.updateById       : <==    Updates: 1
+2026-10-23T21:12:22.762+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:12:22.762+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:12:22.791+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:12:22.792+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:12:22.792+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:12:22.825+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:12:25.868+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:12:25.868+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:12:25.912+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:12:25.914+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:12:25.914+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:12:25.988+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:12:27.409+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ?)
+2026-10-23T21:12:27.409+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String)
+2026-10-23T21:12:27.441+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:12:27.442+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.updateById       : ==>  Preparing: UPDATE ai_task SET status=?, stage=?, stage_message=?, progress=?, updated_at=? WHERE id=?
+2026-10-23T21:12:27.442+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.updateById       : ==> Parameters: 1(Integer), summary(String), 已整合最终结论(String), 100(Integer), 2026-10-23T21:12:27.442341100(LocalDateTime), 4(Long)
+2026-10-23T21:12:27.513+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.updateById       : <==    Updates: 1
+2026-10-23T21:12:27.755+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ?)
+2026-10-23T21:12:27.760+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String)
+2026-10-23T21:12:27.837+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:12:27.844+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.updateById       : ==>  Preparing: UPDATE ai_task SET status=?, stage=?, stage_message=?, progress=?, result_json=?, summary=?, suggestion=?, model=?, tokens_used=?, latency_ms=?, finished_at=?, updated_at=? WHERE id=?
+2026-10-23T21:12:27.844+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.updateById       : ==> Parameters: 2(Integer), summary(String), 已完成(String), 100(Integer), {"type":"STUDY_ANALYSIS","status":"succeeded","model":"deepseek-v4-pro-ga-260813","summary":"学习态势：统计期内学习时长为0，无专注度数据，无进行中目标，偏好与实际行为完全脱节。下一步重点：今晚19:00-20:00完成高数1小节恢复学习；将“考研数学基础启动”设为进行中，每天60分钟并打卡；学习后记录时长、专注度与1条收获，坚持7天；第3、6天重做错题。同步推进英语词汇与编程轻量接触。","suggestion":"### 学习态势分析\n- 统计周期内总学习时长为0分钟，无任何学习记录。  \n- 平均专注度为0.0/5，缺乏有效专注度数据。  \n- 当前没有进行中的学习目标。  \n- 三个月考研数学基础目标暂未产生对应学习记录。  \n- 偏好标签集中在考研数学、英语、编程，但实际学习行为为零。\n\n### 接下来 7 天的安排\n- **考研数学基础启动**：每天固定时间完成高等数学基础阶段1小节，整理公式与概念笔记 （建议 60 分钟）\n- **英语核心词汇打卡**：每天用APP记忆考研核心词30个，并复习前日生词 （建议 30 分钟）\n- **学习记录与专注自评**：每天学习后记录时长、专注度1-5分和1条收获 （建议 10 分钟）\n- **数学例题错题重做**：第3天和第6天集中重做本周数学例题与错题，标记薄弱点 （建议 45 分钟）\n- **编程轻量接触**：隔天学习编程基础30分钟，保持兴趣但不挤压数学主线 （建议 30 分钟）\n\n### 改进建议\n- **最小启动**：今晚固定19:00-20:00完成高等数学1小节并整理公式，先恢复学习行为。  \n- **激活目标**：在平台将“考研数学基础启动”设为进行中，每天60分钟，完成即打卡。  \n- **记录闭环**：学习后立即记录时长、专注度1-5分和1条收获，坚持7天形成习惯。  \n- **错题重做**：第3天和第6天集中重做本周错题，标记薄弱点并回看笔记。","risks":["日均学习时长偏低，目标达成存在延期风险"],"plan":[{"title":"考研数学基础启动","detail":"每天固定时间完成高等数学基础阶段1小节，整理公式与概念笔记","priority":"中","due_date":null,"estimated_minutes":60},{"title":"英语核心词汇打卡","detail":"每天用APP记忆考研核心词30个，并复习前日生词","priority":"中","due_date":null,"estimated_minutes":30},{"title":"学习记录与专注自评","detail":"每天学习后记录时长、专注度1-5分和1条收获","priority":"中","due_date":null,"estimated_minutes":10},{"title":"数学例题错题重做","detail":"第3天和第6天集中重做本周数学例题与错题，标记薄弱点","priority":"中","due_date":null,"estimated_minutes":45},{"title":"编程轻量接触","detail":"隔天学习编程基础30分钟，保持兴趣但不挤压数学主线","priority":"中","due_date":null,"estimated_minutes":30}],"stages":[{"stage":"data_collect","message":"已完成学习数据整理","progress":20},{"stage":"analysis","message":"已完成学习态势分析","progress":40},{"stage":"planning","message":"已生成 5 项学习计划","progress":60},{"stage":"advice","message":"已生成改进建议","progress":90},{"stage":"summary","message":"已整合最终结论","progress":100}],"error":null,"task_no":"3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6","tokens_used":19527,"latency_ms":67620}(String), 学习态势：统计期内学习时长为0，无专注度数据，无进行中目标，偏好与实际行为完全脱节。下一步重点：今晚19:00-20:00完成高数1小节恢复学习；将“考研数学基础启动”设为进行中，每天60分钟并打卡；学习后记录时长、专注度与1条收获，坚持7天；第3、6天重做错题。同步推进英语词汇与编程轻量接触。(String), ### 学习态势分析
+- 统计周期内总学习时长为0分钟，无任何学习记录。  
+- 平均专注度为0.0/5，缺乏有效专注度数据。  
+- 当前没有进行中的学习目标。  
+- 三个月考研数学基础目标暂未产生对应学习记录。  
+- 偏好标签集中在考研数学、英语、编程，但实际学习行为为零。
+
+### 接下来 7 天的安排
+- **考研数学基础启动**：每天固定时间完成高等数学基础阶段1小节，整理公式与概念笔记 （建议 60 分钟）
+- **英语核心词汇打卡**：每天用APP记忆考研核心词30个，并复习前日生词 （建议 30 分钟）
+- **学习记录与专注自评**：每天学习后记录时长、专注度1-5分和1条收获 （建议 10 分钟）
+- **数学例题错题重做**：第3天和第6天集中重做本周数学例题与错题，标记薄弱点 （建议 45 分钟）
+- **编程轻量接触**：隔天学习编程基础30分钟，保持兴趣但不挤压数学主线 （建议 30 分钟）
+
+### 改进建议
+- **最小启动**：今晚固定19:00-20:00完成高等数学1小节并整理公式，先恢复学习行为。  
+- **激活目标**：在平台将“考研数学基础启动”设为进行中，每天60分钟，完成即打卡。  
+- **记录闭环**：学习后立即记录时长、专注度1-5分和1条收获，坚持7天形成习惯。  
+- **错题重做**：第3天和第6天集中重做本周错题，标记薄弱点并回看笔记。(String), deepseek-v4-pro-ga-260813(String), 19527(Integer), 68051(Integer), 2026-10-23T21:12:27.842233500(LocalDateTime), 2026-10-23T21:12:27.844118400(LocalDateTime), 4(Long)
+2026-10-23T21:12:27.920+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.w.mapper.AiTaskMapper.updateById       : <==    Updates: 1
+2026-10-23T21:12:27.923+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.witpath.mapper.ReminderMapper.insert   : ==>  Preparing: INSERT INTO reminder ( user_id, type, level, title, content, source, status, trigger_time, created_at, updated_at, is_deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-23T21:12:27.923+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.witpath.mapper.ReminderMapper.insert   : ==> Parameters: 2(Long), AI_SUGGESTION(String), 1(Integer), AI 学习建议已生成(String), 学习态势：统计期内学习时长为0，无专注度数据，无进行中目标，偏好与实际行为完全脱节。下一步重点：今晚19:00-20:00完成高数1小节恢复学习；将“考研数学基础启动”设为进行中，每天60分钟并打卡；学习后记录时长、专注度与1条收获，坚持7天；第3、6天重做错题。同步推进英语词汇与编程轻量接触。(String), AI(String), 0(Integer), 2026-10-23T21:12:27.920240300(LocalDateTime), 2026-10-23T21:12:27.923290500(LocalDateTime), 2026-10-23T21:12:27.923290500(LocalDateTime), 0(Integer)
+2026-10-23T21:12:27.974+08:00 DEBUG 23676 --- [server] [ntContainer#0-2] c.witpath.mapper.ReminderMapper.insert   : <==    Updates: 1
+2026-10-23T21:12:27.974+08:00  INFO 23676 --- [server] [ntContainer#0-2] com.witpath.ai.AiTaskStateWriter         : AI 任务执行成功：taskNo=3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6 model=deepseek-v4-pro-ga-260813 tokens=19527 latency=68051ms
+2026-10-23T21:12:29.035+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:12:29.035+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:12:29.062+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:12:29.064+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (task_no = ? AND user_id = ?)
+2026-10-23T21:12:29.064+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 3e11a15f-e0f8-451d-a3f5-5d2f39fdf7b6(String), 2(Long)
+2026-10-23T21:12:29.097+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:13:57.667+08:00  INFO 23676 --- [server] [nio-8080-exec-7] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [Hm_lvt_a1ff8825baa73c3a78eb96aa40325abc=1784858630,1785152871] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2026-10-23T21:13:57.701+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:13:57.701+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:13:57.729+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:13:57.732+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:13:57.733+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:13:57.761+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:13:57.880+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:13:57.881+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:13:57.906+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:13:57.912+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.w.mapper.ReminderMapper.selectCount    : ==>  Preparing: SELECT COUNT( * ) AS total FROM reminder WHERE (user_id = ? AND status = ?)
+2026-10-23T21:13:57.914+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.w.mapper.ReminderMapper.selectCount    : ==> Parameters: 2(Long), 0(Integer)
+2026-10-23T21:13:57.944+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:13:57.944+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.w.mapper.ReminderMapper.selectCount    : <==      Total: 1
+2026-10-23T21:13:57.944+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:13:57.944+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:13:57.944+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:13:57.949+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:13:57.949+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:13:57.975+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:13:57.975+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:13:57.985+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:13:57.989+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.UserApiKeyMapper.selectList   : ==>  Preparing: SELECT id,user_id,provider,api_key_enc,base_url,model,embedding_provider,embedding_model,embedding_api_key_enc,embedding_base_url,status,use_default_api,created_at,updated_at,is_deleted FROM user_api_key WHERE (user_id = ? AND is_deleted = ? AND status = ?) ORDER BY updated_at DESC LIMIT 1
+2026-10-23T21:13:57.991+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.UserApiKeyMapper.selectList   : ==> Parameters: 2(Long), 0(Integer), 1(Integer)
+2026-10-23T21:13:58.021+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.UserApiKeyMapper.selectList   : <==      Total: 0
+2026-10-23T21:13:58.220+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.w.m.ReminderMapper.selectList_mpCount  : ==>  Preparing: SELECT COUNT(*) AS total FROM reminder WHERE (user_id = ?)
+2026-10-23T21:13:58.220+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.w.m.ReminderMapper.selectList_mpCount  : ==> Parameters: 2(Long)
+2026-10-23T21:13:58.249+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.w.m.ReminderMapper.selectList_mpCount  : <==      Total: 1
+2026-10-23T21:13:58.255+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.w.mapper.ReminderMapper.selectList     : ==>  Preparing: SELECT id,user_id,goal_id,task_id,type,level,title,content,source,status,trigger_time,read_at,created_at,updated_at,is_deleted FROM reminder WHERE (user_id = ?) ORDER BY status ASC,created_at DESC LIMIT ?
+2026-10-23T21:13:58.255+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.w.mapper.ReminderMapper.selectList     : ==> Parameters: 2(Long), 8(Long)
+2026-10-23T21:13:58.284+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.w.mapper.ReminderMapper.selectList     : <==      Total: 3
+2026-10-23T21:39:26.971+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:39:26.977+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:39:27.097+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:39:27.105+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:39:27.107+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:39:27.153+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:39:27.255+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:39:27.256+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:39:27.297+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:39:27.303+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.ReminderMapper.selectCount    : ==>  Preparing: SELECT COUNT( * ) AS total FROM reminder WHERE (user_id = ? AND status = ?)
+2026-10-23T21:39:27.303+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.ReminderMapper.selectCount    : ==> Parameters: 2(Long), 0(Integer)
+2026-10-23T21:39:27.319+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:39:27.319+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:39:27.319+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:39:27.319+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:39:27.319+08:00 DEBUG 23676 --- [server] [nio-8080-exec-5] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:39:27.319+08:00 DEBUG 23676 --- [server] [nio-8080-exec-5] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:39:27.328+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.ReminderMapper.selectCount    : <==      Total: 1
+2026-10-23T21:39:27.383+08:00 DEBUG 23676 --- [server] [nio-8080-exec-5] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:39:27.383+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:39:27.383+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:39:27.388+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.mapper.UserApiKeyMapper.selectList   : ==>  Preparing: SELECT id,user_id,provider,api_key_enc,base_url,model,embedding_provider,embedding_model,embedding_api_key_enc,embedding_base_url,status,use_default_api,created_at,updated_at,is_deleted FROM user_api_key WHERE (user_id = ? AND is_deleted = ? AND status = ?) ORDER BY updated_at DESC LIMIT 1
+2026-10-23T21:39:27.392+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.mapper.UserApiKeyMapper.selectList   : ==> Parameters: 2(Long), 0(Integer), 1(Integer)
+2026-10-23T21:39:27.405+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.m.ReminderMapper.selectList_mpCount  : ==>  Preparing: SELECT COUNT(*) AS total FROM reminder WHERE (user_id = ?)
+2026-10-23T21:39:27.405+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.m.ReminderMapper.selectList_mpCount  : ==> Parameters: 2(Long)
+2026-10-23T21:39:27.455+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.mapper.UserApiKeyMapper.selectList   : <==      Total: 0
+2026-10-23T21:39:27.455+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.m.ReminderMapper.selectList_mpCount  : <==      Total: 1
+2026-10-23T21:39:27.455+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.ReminderMapper.selectList     : ==>  Preparing: SELECT id,user_id,goal_id,task_id,type,level,title,content,source,status,trigger_time,read_at,created_at,updated_at,is_deleted FROM reminder WHERE (user_id = ?) ORDER BY status ASC,created_at DESC LIMIT ?
+2026-10-23T21:39:27.457+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.ReminderMapper.selectList     : ==> Parameters: 2(Long), 8(Long)
+2026-10-23T21:39:27.512+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.mapper.ReminderMapper.selectList     : <==      Total: 3
+2026-10-23T21:58:04.470+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:04.471+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:04.493+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:04.551+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:04.551+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:04.581+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:04.583+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyRecordMapper.selectList  : ==>  Preparing: SELECT id,study_date,duration_minutes,subject,focus_score,goal_id,task_id,title,content,start_at,end_at,outcome,tags FROM study_record WHERE (user_id = ? AND study_date >= ?) ORDER BY study_date DESC
+2026-10-23T21:58:04.583+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyRecordMapper.selectList  : ==> Parameters: 2(Long), 2025-10-23(LocalDate)
+2026-10-23T21:58:04.607+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyRecordMapper.selectList  : <==      Total: 0
+2026-10-23T21:58:04.611+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyGoalMapper.selectList    : ==>  Preparing: SELECT id,user_id,title,description,subject,priority,status,start_date,end_date,target_hours,actual_hours,task_total,task_done,progress,created_at,updated_at,is_deleted FROM study_goal WHERE (user_id = ? AND status = ?)
+2026-10-23T21:58:04.611+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyGoalMapper.selectList    : ==> Parameters: 2(Long), 1(Integer)
+2026-10-23T21:58:04.636+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyGoalMapper.selectList    : <==      Total: 0
+2026-10-23T21:58:04.636+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyTaskMapper.selectList    : ==>  Preparing: SELECT id,user_id,goal_id,title,description,status,priority,plan_date,due_date,estimated_minutes,actual_minutes,completed_at,sort_order,created_at,updated_at,is_deleted FROM study_task WHERE (user_id = ?)
+2026-10-23T21:58:04.636+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyTaskMapper.selectList    : ==> Parameters: 2(Long)
+2026-10-23T21:58:04.661+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyTaskMapper.selectList    : <==      Total: 0
+2026-10-23T21:58:04.662+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyTaskMapper.selectList    : ==>  Preparing: SELECT id,user_id,goal_id,title,description,status,priority,plan_date,due_date,estimated_minutes,actual_minutes,completed_at,sort_order,created_at,updated_at,is_deleted FROM study_task WHERE (user_id = ? AND status IN (?,?,?)) ORDER BY due_date ASC,priority DESC LIMIT 6
+2026-10-23T21:58:04.662+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyTaskMapper.selectList    : ==> Parameters: 2(Long), 1(Integer), 2(Integer), 4(Integer)
+2026-10-23T21:58:04.695+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyTaskMapper.selectList    : <==      Total: 0
+2026-10-23T21:58:04.697+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyRecordMapper.selectList  : ==>  Preparing: SELECT id,user_id,goal_id,task_id,title,content,subject,study_date,start_at,end_at,duration_minutes,focus_score,outcome,tags,created_at,updated_at,is_deleted FROM study_record WHERE (user_id = ?) ORDER BY study_date DESC,id DESC LIMIT 5
+2026-10-23T21:58:04.697+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyRecordMapper.selectList  : ==> Parameters: 2(Long)
+2026-10-23T21:58:04.727+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.StudyRecordMapper.selectList  : <==      Total: 0
+2026-10-23T21:58:04.729+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (user_id = ? AND status = ?) ORDER BY id DESC LIMIT 1
+2026-10-23T21:58:04.729+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 2(Long), 2(Integer)
+2026-10-23T21:58:04.769+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:58:04.769+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.ReminderMapper.selectCount    : ==>  Preparing: SELECT COUNT( * ) AS total FROM reminder WHERE (user_id = ? AND status = ?)
+2026-10-23T21:58:04.769+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.ReminderMapper.selectCount    : ==> Parameters: 2(Long), 0(Integer)
+2026-10-23T21:58:04.794+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.ReminderMapper.selectCount    : <==      Total: 1
+2026-10-23T21:58:06.446+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:06.449+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:06.473+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:06.500+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.w.m.S.selectList_mpCount               : ==>  Preparing: SELECT COUNT(*) AS total FROM study_goal WHERE (user_id = ?)
+2026-10-23T21:58:06.500+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.w.m.S.selectList_mpCount               : ==> Parameters: 2(Long)
+2026-10-23T21:58:06.527+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.w.m.S.selectList_mpCount               : <==      Total: 1
+2026-10-23T21:58:07.439+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:07.439+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:07.439+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:07.439+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:07.468+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:07.468+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:07.483+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.m.S.selectList_mpCount               : ==>  Preparing: SELECT COUNT(*) AS total FROM study_goal WHERE (user_id = ? AND status = ?)
+2026-10-23T21:58:07.483+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.m.S.selectList_mpCount               : ==>  Preparing: SELECT COUNT(*) AS total FROM study_record WHERE (user_id = ?)
+2026-10-23T21:58:07.483+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.m.S.selectList_mpCount               : ==> Parameters: 2(Long)
+2026-10-23T21:58:07.483+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.m.S.selectList_mpCount               : ==> Parameters: 2(Long), 1(Integer)
+2026-10-23T21:58:07.511+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.m.S.selectList_mpCount               : <==      Total: 1
+2026-10-23T21:58:07.511+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.m.S.selectList_mpCount               : <==      Total: 1
+2026-10-23T21:58:08.456+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:08.456+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:08.485+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:08.490+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.w.m.AiConversationMapper.selectList    : ==>  Preparing: SELECT id,user_id,title,message_count,last_message_at,created_at,updated_at,is_deleted FROM ai_conversation WHERE (user_id = ?) ORDER BY last_message_at DESC,id DESC LIMIT 50
+2026-10-23T21:58:08.491+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.w.m.AiConversationMapper.selectList    : ==> Parameters: 2(Long)
+2026-10-23T21:58:08.518+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.w.m.AiConversationMapper.selectList    : <==      Total: 5
+2026-10-23T21:58:08.540+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:08.541+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:08.567+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:08.575+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.w.m.S.selectList_mpCount               : ==>  Preparing: SELECT COUNT(*) AS total FROM study_goal WHERE (user_id = ? AND status = ?)
+2026-10-23T21:58:08.577+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.w.m.S.selectList_mpCount               : ==> Parameters: 2(Long), 1(Integer)
+2026-10-23T21:58:08.602+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.w.m.S.selectList_mpCount               : <==      Total: 1
+2026-10-23T21:58:08.626+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:08.626+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:08.654+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:08.659+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (user_id = ? AND status = ?) ORDER BY id DESC LIMIT 1
+2026-10-23T21:58:08.660+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 2(Long), 2(Integer)
+2026-10-23T21:58:08.686+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:58:09.088+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:09.088+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:09.114+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:09.128+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.m.S.selectList_mpCount               : ==>  Preparing: SELECT COUNT(*) AS total FROM study_material WHERE (user_id = ?)
+2026-10-23T21:58:09.128+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.m.S.selectList_mpCount               : ==> Parameters: 2(Long)
+2026-10-23T21:58:09.155+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.m.S.selectList_mpCount               : <==      Total: 1
+2026-10-23T21:58:10.469+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:10.469+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:10.496+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:10.496+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.m.AiConversationMapper.selectList    : ==>  Preparing: SELECT id,user_id,title,message_count,last_message_at,created_at,updated_at,is_deleted FROM ai_conversation WHERE (user_id = ?) ORDER BY last_message_at DESC,id DESC LIMIT 50
+2026-10-23T21:58:10.499+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.m.AiConversationMapper.selectList    : ==> Parameters: 2(Long)
+2026-10-23T21:58:10.529+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.m.AiConversationMapper.selectList    : <==      Total: 5
+2026-10-23T21:58:10.574+08:00 DEBUG 23676 --- [server] [nio-8080-exec-5] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:10.575+08:00 DEBUG 23676 --- [server] [nio-8080-exec-5] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:10.601+08:00 DEBUG 23676 --- [server] [nio-8080-exec-5] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:10.612+08:00 DEBUG 23676 --- [server] [nio-8080-exec-5] c.w.m.S.selectList_mpCount               : ==>  Preparing: SELECT COUNT(*) AS total FROM study_goal WHERE (user_id = ? AND status = ?)
+2026-10-23T21:58:10.612+08:00 DEBUG 23676 --- [server] [nio-8080-exec-5] c.w.m.S.selectList_mpCount               : ==> Parameters: 2(Long), 1(Integer)
+2026-10-23T21:58:10.637+08:00 DEBUG 23676 --- [server] [nio-8080-exec-5] c.w.m.S.selectList_mpCount               : <==      Total: 1
+2026-10-23T21:58:10.652+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:10.656+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:10.682+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:10.685+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (user_id = ? AND status = ?) ORDER BY id DESC LIMIT 1
+2026-10-23T21:58:10.685+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 2(Long), 2(Integer)
+2026-10-23T21:58:10.711+08:00 DEBUG 23676 --- [server] [nio-8080-exec-7] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:58:11.058+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:11.058+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:11.058+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:11.058+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:11.081+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:11.081+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:11.084+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:11.084+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:11.085+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.UserApiKeyMapper.selectList   : ==>  Preparing: SELECT id,user_id,provider,api_key_enc,base_url,model,embedding_provider,embedding_model,embedding_api_key_enc,embedding_base_url,status,use_default_api,created_at,updated_at,is_deleted FROM user_api_key WHERE (user_id = ? AND is_deleted = ? AND status = ?) ORDER BY updated_at DESC LIMIT 1
+2026-10-23T21:58:11.086+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.UserApiKeyMapper.selectList   : ==> Parameters: 2(Long), 0(Integer), 1(Integer)
+2026-10-23T21:58:11.086+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.m.ReminderMapper.selectList_mpCount  : ==>  Preparing: SELECT COUNT(*) AS total FROM reminder WHERE (user_id = ?)
+2026-10-23T21:58:11.086+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.m.ReminderMapper.selectList_mpCount  : ==> Parameters: 2(Long)
+2026-10-23T21:58:11.108+08:00 DEBUG 23676 --- [server] [nio-8080-exec-9] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:11.112+08:00 DEBUG 23676 --- [server] [nio-8080-exec-2] c.w.mapper.UserApiKeyMapper.selectList   : <==      Total: 0
+2026-10-23T21:58:11.113+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.m.ReminderMapper.selectList_mpCount  : <==      Total: 1
+2026-10-23T21:58:11.113+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.ReminderMapper.selectList     : ==>  Preparing: SELECT id,user_id,goal_id,task_id,type,level,title,content,source,status,trigger_time,read_at,created_at,updated_at,is_deleted FROM reminder WHERE (user_id = ?) ORDER BY status ASC,created_at DESC LIMIT ?
+2026-10-23T21:58:11.115+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.ReminderMapper.selectList     : ==> Parameters: 2(Long), 8(Long)
+2026-10-23T21:58:11.138+08:00 DEBUG 23676 --- [server] [io-8080-exec-10] c.w.mapper.ReminderMapper.selectList     : <==      Total: 3
+2026-10-23T21:58:11.556+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:11.556+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:11.579+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:11.584+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.w.m.AiConversationMapper.selectList    : ==>  Preparing: SELECT id,user_id,title,message_count,last_message_at,created_at,updated_at,is_deleted FROM ai_conversation WHERE (user_id = ?) ORDER BY last_message_at DESC,id DESC LIMIT 50
+2026-10-23T21:58:11.584+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.w.m.AiConversationMapper.selectList    : ==> Parameters: 2(Long)
+2026-10-23T21:58:11.612+08:00 DEBUG 23676 --- [server] [nio-8080-exec-1] c.w.m.AiConversationMapper.selectList    : <==      Total: 5
+2026-10-23T21:58:11.632+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:11.632+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:11.695+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:11.703+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.w.m.S.selectList_mpCount               : ==>  Preparing: SELECT COUNT(*) AS total FROM study_goal WHERE (user_id = ? AND status = ?)
+2026-10-23T21:58:11.704+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.w.m.S.selectList_mpCount               : ==> Parameters: 2(Long), 1(Integer)
+2026-10-23T21:58:11.730+08:00 DEBUG 23676 --- [server] [nio-8080-exec-3] c.w.m.S.selectList_mpCount               : <==      Total: 1
+2026-10-23T21:58:11.748+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:11.748+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:11.776+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:11.778+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==>  Preparing: SELECT id,task_no,user_id,type,title,question,focus_goal_id,status,stage,stage_message,progress,request_json,result_json,summary,suggestion,model,tokens_used,latency_ms,error_message,started_at,finished_at,created_at,updated_at,is_deleted FROM ai_task WHERE (user_id = ? AND status = ?) ORDER BY id DESC LIMIT 1
+2026-10-23T21:58:11.779+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : ==> Parameters: 2(Long), 2(Integer)
+2026-10-23T21:58:11.806+08:00 DEBUG 23676 --- [server] [nio-8080-exec-4] c.w.mapper.AiTaskMapper.selectList       : <==      Total: 1
+2026-10-23T21:58:30.054+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:30.054+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:30.090+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:30.162+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.mapper.AiConversationMapper.insert   : ==>  Preparing: INSERT INTO ai_conversation ( user_id, title, message_count, last_message_at, created_at, updated_at, is_deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ? )
+2026-10-23T21:58:30.164+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.mapper.AiConversationMapper.insert   : ==> Parameters: 2(Long), 你好(String), 0(Integer), 2026-10-23T21:58:30.159452700(LocalDateTime), 2026-10-23T21:58:30.162330600(LocalDateTime), 2026-10-23T21:58:30.162330600(LocalDateTime), 0(Integer)
+2026-10-23T21:58:30.254+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.mapper.AiConversationMapper.insert   : <==    Updates: 1
+2026-10-23T21:58:30.254+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.AiMessageMapper.insert  : ==>  Preparing: INSERT INTO ai_message ( conversation_id, user_id, role, content, tokens_used, created_at, updated_at, is_deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-23T21:58:30.254+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.AiMessageMapper.insert  : ==> Parameters: 10(Long), 2(Long), user(String), 你好(String), 0(Integer), 2026-10-23T21:58:30.254106800(LocalDateTime), 2026-10-23T21:58:30.254106800(LocalDateTime), 0(Integer)
+2026-10-23T21:58:30.331+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.AiMessageMapper.insert  : <==    Updates: 1
+2026-10-23T21:58:30.331+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:30.331+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:30.446+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:30.446+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.mapper.AiMessageMapper.selectList    : ==>  Preparing: SELECT id,conversation_id,user_id,role,content,referenced,tokens_used,created_at,updated_at,is_deleted FROM ai_message WHERE (conversation_id = ?) ORDER BY id DESC LIMIT 10
+2026-10-23T21:58:30.448+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.mapper.AiMessageMapper.selectList    : ==> Parameters: 10(Long)
+2026-10-23T21:58:30.472+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.mapper.AiMessageMapper.selectList    : <==      Total: 1
+2026-10-23T21:58:30.650+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.mapper.UserApiKeyMapper.selectList   : ==>  Preparing: SELECT id,user_id,provider,api_key_enc,base_url,model,embedding_provider,embedding_model,embedding_api_key_enc,embedding_base_url,status,use_default_api,created_at,updated_at,is_deleted FROM user_api_key WHERE (user_id = ? AND is_deleted = ? AND status = ?) ORDER BY updated_at DESC LIMIT 1
+2026-10-23T21:58:30.650+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.mapper.UserApiKeyMapper.selectList   : ==> Parameters: 2(Long), 0(Integer), 1(Integer)
+2026-10-23T21:58:30.732+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.mapper.UserApiKeyMapper.selectList   : <==      Total: 0
+2026-10-23T21:58:40.143+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.AiMessageMapper.insert  : ==>  Preparing: INSERT INTO ai_message ( conversation_id, user_id, role, content, referenced, tokens_used, created_at, updated_at, is_deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-23T21:58:40.144+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.AiMessageMapper.insert  : ==> Parameters: 10(Long), 2(Long), assistant(String), 你好！我是学途知行学习分析助手。
+
+**当前学习状态：**
+- 总学习时长：0 分钟
+- 近 7 天：0 分钟
+- 连续学习：0 天
+- 进行中目标 / 待办：0 个
+
+**建议下一步：**
+1. 设定 1 个本周小目标，例如“每天学习 25 分钟”
+2. 添加第一个待办任务，明确今天要完成的内容
+3. 开始一次 25 分钟专注学习，先突破 0 记录
+
+需要我帮你制定一份可执行的学习计划吗？(String), [](String), 7389(Integer), 2026-10-23T21:58:40.143315500(LocalDateTime), 2026-10-23T21:58:40.143315500(LocalDateTime), 0(Integer)
+2026-10-23T21:58:40.390+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.witpath.mapper.AiMessageMapper.insert  : <==    Updates: 1
+2026-10-23T21:58:40.391+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.m.AiConversationMapper.updateById    : ==>  Preparing: UPDATE ai_conversation SET title=?, message_count=?, last_message_at=?, updated_at=? WHERE id=?
+2026-10-23T21:58:40.391+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.m.AiConversationMapper.updateById    : ==> Parameters: 你好(String), 3(Integer), 2026-10-23T21:58:40.390545500(LocalDateTime), 2026-10-23T21:58:40.391546900(LocalDateTime), 10(Long)
+2026-10-23T21:58:40.441+08:00 DEBUG 23676 --- [server] [nio-8080-exec-8] c.w.m.AiConversationMapper.updateById    : <==    Updates: 1
+2026-10-23T21:58:40.513+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-23T21:58:40.514+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-23T21:58:40.550+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-23T21:58:40.552+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.m.AiConversationMapper.selectList    : ==>  Preparing: SELECT id,user_id,title,message_count,last_message_at,created_at,updated_at,is_deleted FROM ai_conversation WHERE (user_id = ?) ORDER BY last_message_at DESC,id DESC LIMIT 50
+2026-10-23T21:58:40.552+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.m.AiConversationMapper.selectList    : ==> Parameters: 2(Long)
+2026-10-23T21:58:40.580+08:00 DEBUG 23676 --- [server] [nio-8080-exec-6] c.w.m.AiConversationMapper.selectList    : <==      Total: 6
+2026-10-23T22:13:32.536+08:00  WARN 23676 --- [server] [ntContainer#1-1] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it
+
+com.rabbitmq.client.ShutdownSignalException: connection error
+	at com.rabbitmq.client.impl.AMQConnection.startShutdown(AMQConnection.java:1007) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection.shutdown(AMQConnection.java:997) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection.handleFailure(AMQConnection.java:797) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection.access$500(AMQConnection.java:48) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:696) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.io.EOFException
+	at java.base/java.io.DataInputStream.readUnsignedByte(DataInputStream.java:296) ~[na:na]
+	at com.rabbitmq.client.impl.Frame.readFrom(Frame.java:91) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.SocketFrameHandler.readFrame(SocketFrameHandler.java:199) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:687) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	... 1 common frames omitted
+
+2026-10-23T22:13:32.606+08:00  WARN 23676 --- [server] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it
+
+com.rabbitmq.client.ShutdownSignalException: connection error
+	at com.rabbitmq.client.impl.AMQConnection.startShutdown(AMQConnection.java:1007) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection.shutdown(AMQConnection.java:997) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection.handleFailure(AMQConnection.java:797) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection.access$500(AMQConnection.java:48) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:696) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.io.EOFException
+	at java.base/java.io.DataInputStream.readUnsignedByte(DataInputStream.java:296) ~[na:na]
+	at com.rabbitmq.client.impl.Frame.readFrom(Frame.java:91) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.SocketFrameHandler.readFrame(SocketFrameHandler.java:199) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:687) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	... 1 common frames omitted
+
+2026-10-23T22:13:32.606+08:00  WARN 23676 --- [server] [ntContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it
+
+com.rabbitmq.client.ShutdownSignalException: connection error
+	at com.rabbitmq.client.impl.AMQConnection.startShutdown(AMQConnection.java:1007) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection.shutdown(AMQConnection.java:997) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection.handleFailure(AMQConnection.java:797) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection.access$500(AMQConnection.java:48) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:696) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.io.EOFException
+	at java.base/java.io.DataInputStream.readUnsignedByte(DataInputStream.java:296) ~[na:na]
+	at com.rabbitmq.client.impl.Frame.readFrom(Frame.java:91) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.SocketFrameHandler.readFrame(SocketFrameHandler.java:199) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:687) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	... 1 common frames omitted
+
+2026-10-23T22:13:32.621+08:00  INFO 23676 --- [server] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@51a69e8f: tags=[[amq.ctag-0D2BysOqknHsn6YMqIJx-w]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://admin@127.0.0.1:5672/,1), conn: Proxy@4feaa4b8 Shared Rabbit Connection: SimpleConnection@7c0a6f62 [delegate=amqp://admin@127.0.0.1:5672/, localPort=49294], acknowledgeMode=AUTO local queue size=0
+2026-10-23T22:13:32.621+08:00  INFO 23676 --- [server] [ntContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@6442cf3e: tags=[[amq.ctag-07KZ8vJoxf8jFrF6BZPFBw]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://admin@127.0.0.1:5672/,2), conn: Proxy@4feaa4b8 Shared Rabbit Connection: SimpleConnection@7c0a6f62 [delegate=amqp://admin@127.0.0.1:5672/, localPort=49294], acknowledgeMode=AUTO local queue size=0
+2026-10-23T22:13:32.621+08:00  INFO 23676 --- [server] [ntContainer#1-1] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@582b14e2: tags=[[amq.ctag-3nW0ZRgc-WUzdOl-F_Bwgg]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://admin@127.0.0.1:5672/,3), conn: Proxy@4feaa4b8 Shared Rabbit Connection: SimpleConnection@7c0a6f62 [delegate=amqp://admin@127.0.0.1:5672/, localPort=49294], acknowledgeMode=AUTO local queue size=0
+2026-10-23T22:13:32.664+08:00  INFO 23676 --- [server] [ntContainer#0-3] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:32.703+08:00  INFO 23676 --- [server] [ntContainer#1-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:32.703+08:00 ERROR 23676 --- [server] [ntContainer#0-3] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:632) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:729) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:257) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2259) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2232) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2212) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:467) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:451) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1972) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1936) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1489) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1328) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:684) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:678) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:647) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:593) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	... 12 common frames omitted
+
+2026-10-23T22:13:32.706+08:00 ERROR 23676 --- [server] [ntContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:632) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:729) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:257) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2259) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2232) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2212) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:467) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:451) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1972) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1936) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1489) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1328) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:684) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.25.0.jar!/:5.25.0]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:678) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:647) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:593) ~[spring-rabbit-3.2.12.jar!/:3.2.12]
+	... 12 common frames omitted
+
+2026-10-23T22:13:32.709+08:00  INFO 23676 --- [server] [ntContainer#0-3] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:32.711+08:00  INFO 23676 --- [server] [ntContainer#1-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:32.711+08:00  INFO 23676 --- [server] [ntContainer#0-4] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:32.725+08:00 ERROR 23676 --- [server] [ntContainer#0-4] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-10-23T22:13:32.725+08:00  INFO 23676 --- [server] [ntContainer#0-4] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:37.725+08:00  WARN 23676 --- [server] [ntContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-10-23T22:13:37.725+08:00  WARN 23676 --- [server] [ntContainer#0-3] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-10-23T22:13:37.725+08:00  INFO 23676 --- [server] [ntContainer#0-3] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@707d8610: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-10-23T22:13:37.725+08:00  INFO 23676 --- [server] [ntContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@2c41e7de: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-10-23T22:13:37.741+08:00  WARN 23676 --- [server] [ntContainer#0-4] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-10-23T22:13:37.741+08:00  INFO 23676 --- [server] [ntContainer#0-4] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@af47826: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-10-23T22:13:37.742+08:00  INFO 23676 --- [server] [ntContainer#1-3] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:37.757+08:00 ERROR 23676 --- [server] [ntContainer#1-3] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-10-23T22:13:37.757+08:00  INFO 23676 --- [server] [ntContainer#0-5] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:37.773+08:00 ERROR 23676 --- [server] [ntContainer#0-5] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-10-23T22:13:37.773+08:00  INFO 23676 --- [server] [ntContainer#1-3] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:37.789+08:00  INFO 23676 --- [server] [ntContainer#0-5] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:37.789+08:00  INFO 23676 --- [server] [ntContainer#0-6] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:37.791+08:00 ERROR 23676 --- [server] [ntContainer#0-6] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-10-23T22:13:37.791+08:00  INFO 23676 --- [server] [ntContainer#0-6] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:38.620+08:00  WARN 23676 --- [server] [ool:housekeeper] com.zaxxer.hikari.pool.PoolBase          : WitPathHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@55d1bf12 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-23T22:13:42.986+08:00  WARN 23676 --- [server] [ntContainer#0-6] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-10-23T22:13:42.986+08:00  WARN 23676 --- [server] [ntContainer#0-5] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-10-23T22:13:42.986+08:00  WARN 23676 --- [server] [ntContainer#1-3] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-10-23T22:13:42.986+08:00  INFO 23676 --- [server] [ntContainer#0-6] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@5937ffc3: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-10-23T22:13:42.986+08:00  INFO 23676 --- [server] [ntContainer#1-3] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@2bfe1d83: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-10-23T22:13:42.986+08:00  INFO 23676 --- [server] [ntContainer#0-5] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@4c544dfe: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-10-23T22:13:42.986+08:00  INFO 23676 --- [server] [ntContainer#0-7] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:42.986+08:00 ERROR 23676 --- [server] [ntContainer#0-7] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-10-23T22:13:42.986+08:00  INFO 23676 --- [server] [ntContainer#1-4] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:42.986+08:00 ERROR 23676 --- [server] [ntContainer#1-4] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-10-23T22:13:42.986+08:00  INFO 23676 --- [server] [ntContainer#0-7] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:42.986+08:00  INFO 23676 --- [server] [ntContainer#0-8] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:42.986+08:00 ERROR 23676 --- [server] [ntContainer#0-8] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-10-23T22:13:42.986+08:00  INFO 23676 --- [server] [ntContainer#1-4] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:42.986+08:00  INFO 23676 --- [server] [ntContainer#0-8] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:48.161+08:00  WARN 23676 --- [server] [ntContainer#1-4] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-10-23T22:13:48.161+08:00  WARN 23676 --- [server] [ntContainer#0-7] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-10-23T22:13:48.161+08:00  WARN 23676 --- [server] [ntContainer#0-8] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-10-23T22:13:48.161+08:00  INFO 23676 --- [server] [ntContainer#1-4] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@71674579: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-10-23T22:13:48.161+08:00  INFO 23676 --- [server] [ntContainer#0-7] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@2edb7890: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-10-23T22:13:48.161+08:00  INFO 23676 --- [server] [ntContainer#0-8] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@3ac17f40: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-10-23T22:13:48.163+08:00  INFO 23676 --- [server] [ntContainer#0-9] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:48.165+08:00 ERROR 23676 --- [server] [ntContainer#0-9] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-10-23T22:13:48.165+08:00  INFO 23676 --- [server] [ntContainer#1-5] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:48.168+08:00  INFO 23676 --- [server] [ntContainer#0-9] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:48.168+08:00 ERROR 23676 --- [server] [ntContainer#1-5] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-10-23T22:13:48.194+08:00  INFO 23676 --- [server] [tContainer#0-10] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:48.209+08:00 ERROR 23676 --- [server] [tContainer#0-10] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-10-23T22:13:48.209+08:00  INFO 23676 --- [server] [tContainer#0-10] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-23T22:13:48.224+08:00  INFO 23676 --- [server] [ntContainer#1-5] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]

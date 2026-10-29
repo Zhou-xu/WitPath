@@ -1,0 +1,147 @@
+0:04:14 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:04:57 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:04:58 Tab1 StartNav30 #typed
+0:04:58 Tab1 StartNav31 #renderer-script #link
+0:04:58 Tab1 FinishNav31
+0:04:58 Tab1 FinishNav30
+0:04:58 Tab1 StartNav32 #renderer-script #link
+0:04:58 Tab1 FinishNav32
+0:04:58 Tab1 PageLoad
+0:04:58 Tab1 StartNav33 #renderer-script #link
+0:04:58 Tab1 FinishNav33
+0:04:58 Tab1 StartNav34 #typed
+0:04:58 Tab1 StartNav35 #renderer-script #link
+0:04:58 Tab1 FinishNav35
+0:04:58 Tab1 FinishNav34
+0:04:58 Tab1 StartNav36 #renderer-script #link
+0:04:58 Tab1 FinishNav36
+0:04:58 Tab1 PageLoad
+0:04:59 Tab1 StartNav37 #renderer-script #link
+0:04:59 Tab1 FinishNav37
+0:05:02 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:05:02 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:05:50 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:05:50 Tab1 StartNav38 #typed
+0:05:50 Tab1 StartNav39 #renderer-script #link
+0:05:50 Tab1 FinishNav39
+0:05:50 Tab1 FinishNav38
+0:05:50 Tab1 StartNav40 #renderer-script #link
+0:05:50 Tab1 FinishNav40
+0:05:50 Tab1 PageLoad
+0:05:51 Tab1 StartNav41 #renderer-script #link
+0:05:51 Tab1 FinishNav41
+0:05:51 Tab1 StartNav42 #typed
+0:05:51 Tab1 StartNav43 #renderer-script #link
+0:05:51 Tab1 FinishNav43
+0:05:51 Tab1 FinishNav42
+0:05:51 Tab1 StartNav44 #renderer-script #link
+0:05:51 Tab1 FinishNav44
+0:05:51 Tab1 PageLoad
+0:05:51 Tab1 StartNav45 #renderer-script #link
+0:05:51 Tab1 FinishNav45
+0:05:54 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:05:54 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:06:36 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:06:36 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:07:16 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:07:16 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:08:09 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:08:09 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:09:04 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:09:17 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:09:17 Tab1 StartNav46 #typed
+0:09:17 Tab1 StartNav47 #renderer-script #link
+0:09:17 Tab1 FinishNav47
+0:09:17 Tab1 FinishNav46
+0:09:17 Tab1 StartNav48 #renderer-script #link
+0:09:17 Tab1 FinishNav48
+0:09:17 Tab1 PageLoad
+0:09:17 Tab1 StartNav49 #renderer-script #link
+0:09:17 Tab1 FinishNav49
+0:09:17 Tab1 StartNav50 #typed
+0:09:17 Tab1 StartNav51 #renderer-script #link
+0:09:17 Tab1 FinishNav51
+0:09:17 Tab1 FinishNav50
+0:09:17 Tab1 StartNav52 #renderer-script #link
+0:09:17 Tab1 FinishNav52
+0:09:17 Tab1 PageLoad
+0:09:18 Tab1 StartNav53 #renderer-script #link
+0:09:18 Tab1 FinishNav53
+0:09:21 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:09:21 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:09:22 PasswordManager_LoginPassed
+0:09:22 Microsoft.ENP.Framework.CourtesyEngine.FrequencyCappingAllowed
+0:09:22 Microsoft.Nurturing.Framework.CourtesyEngine.FrequencyCappingAllowed
+0:09:22 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:09:22 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:09:25 Widget Closed: PasswordBubbleViewBase
+0:09:56 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:10:56 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:10:56 Tab1 StartNav54 #typed
+0:10:56 Tab1 StartNav55 #renderer-script #link
+0:10:56 Tab1 FinishNav55
+0:10:56 Tab1 FinishNav54
+0:10:56 Tab1 StartNav56 #renderer-script #link
+0:10:56 Tab1 FinishNav56
+0:10:56 Tab1 PageLoad
+0:10:56 Tab1 StartNav57 #renderer-script #link
+0:10:56 Tab1 FinishNav57
+0:10:56 Tab1 StartNav58 #typed
+0:10:56 Tab1 StartNav59 #renderer-script #link
+0:10:56 Tab1 FinishNav59
+0:10:57 Tab1 FinishNav58
+0:10:57 Tab1 StartNav60 #renderer-script #link
+0:10:57 Tab1 FinishNav60
+0:10:57 Tab1 PageLoad
+0:10:57 Tab1 StartNav61 #renderer-script #link
+0:10:57 Tab1 FinishNav61
+0:11:00 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:11:00 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:12:07 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:12:07 Tab1 StartNav62 #typed
+0:12:07 Tab1 StartNav63 #renderer-script #link
+0:12:07 Tab1 FinishNav63
+0:12:07 Tab1 FinishNav62
+0:12:08 Tab1 StartNav64 #renderer-script #link
+0:12:08 Tab1 FinishNav64
+0:12:08 Tab1 PageLoad
+0:12:08 Tab1 StartNav65 #renderer-script #link
+0:12:08 Tab1 FinishNav65
+0:12:08 Tab1 StartNav66 #typed
+0:12:08 Tab1 StartNav67 #renderer-script #link
+0:12:08 Tab1 FinishNav67
+0:12:08 Tab1 FinishNav66
+0:12:08 Tab1 StartNav68 #renderer-script #link
+0:12:08 Tab1 FinishNav68
+0:12:08 Tab1 PageLoad
+0:12:08 Tab1 StartNav69 #renderer-script #link
+0:12:08 Tab1 FinishNav69
+0:12:11 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:12:11 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:12:29 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:12:29 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:13:24 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:13:24 Tab1 StartNav70 #typed
+0:13:24 Tab1 StartNav71 #renderer-script #link
+0:13:24 Tab1 FinishNav71
+0:13:24 Tab1 FinishNav70
+0:13:24 Tab1 StartNav72 #renderer-script #link
+0:13:24 Tab1 FinishNav72
+0:13:24 Tab1 PageLoad
+0:13:25 Tab1 StartNav73 #renderer-script #link
+0:13:25 Tab1 FinishNav73
+0:13:25 Tab1 StartNav74 #typed
+0:13:25 Tab1 StartNav75 #renderer-script #link
+0:13:25 Tab1 FinishNav75
+0:13:25 Tab1 FinishNav74
+0:13:25 Tab1 StartNav76 #renderer-script #link
+0:13:25 Tab1 FinishNav76
+0:13:25 Tab1 PageLoad
+0:13:25 Tab1 StartNav77 #renderer-script #link
+0:13:25 Tab1 FinishNav77
+0:13:28 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:13:28 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:13:34 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:13:34 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:14:45 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions
+0:14:45 Microsoft.Autofill.Password.SignIn.NoAutofillSuggestions

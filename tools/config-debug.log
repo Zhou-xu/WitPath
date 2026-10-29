@@ -1,0 +1,178 @@
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-21T16:05:50.062+08:00  INFO 23384 --- [server] [           main] com.witpath.ServerApplication            : Starting ServerApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 23384 (D:\Desktop\grass\学途知行AI协作平台\backend\WitPath\server\target\server-0.0.1-SNAPSHOT.jar started by 周旭 in D:\Desktop\grass\学途知行AI协作平台\backend\WitPath)
+2026-10-21T16:05:50.068+08:00  INFO 23384 --- [server] [           main] com.witpath.ServerApplication            : The following 2 profiles are active: "dev", "secret"
+2026-10-21T16:05:56.534+08:00  INFO 23384 --- [server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-10-21T16:05:56.575+08:00  INFO 23384 --- [server] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-21T16:05:56.576+08:00  INFO 23384 --- [server] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-10-21T16:05:56.770+08:00  INFO 23384 --- [server] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-21T16:05:56.776+08:00  INFO 23384 --- [server] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6628 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.11 
+2026-10-21T16:06:03.885+08:00  INFO 23384 --- [server] [           main] org.redisson.Version                     : Redisson 3.27.2
+2026-10-21T16:06:05.925+08:00  INFO 23384 --- [server] [isson-netty-1-4] o.redisson.connection.ConnectionsHolder  : 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2026-10-21T16:06:06.190+08:00  INFO 23384 --- [server] [sson-netty-1-11] o.redisson.connection.ConnectionsHolder  : 4 connections initialized for 127.0.0.1/127.0.0.1:6379
+2026-10-21T16:06:06.447+08:00  INFO 23384 --- [server] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-10-21T16:06:06.481+08:00  INFO 23384 --- [server] [           main] c.witpath.storage.LocalStorageService    : 本地资料存储目录：D:\Desktop\grass\学途知行AI协作平台\backend\WitPath\storage\materials
+2026-10-21T16:06:07.338+08:00  INFO 23384 --- [server] [           main] com.witpath.config.WebConfig             : 本地资料静态资源映射：/files/** -> file:D:/Desktop/grass/学途知行AI协作平台/backend/WitPath/./storage/materials/
+2026-10-21T16:06:09.774+08:00  INFO 23384 --- [server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-10-21T16:06:09.783+08:00  INFO 23384 --- [server] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2026-10-21T16:06:09.925+08:00  INFO 23384 --- [server] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-21T16:06:09.926+08:00  INFO 23384 --- [server] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-21T16:06:09.927+08:00  INFO 23384 --- [server] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-21T16:06:10.139+08:00  INFO 23384 --- [server] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#61ad30f6:0/SimpleConnection@322eb1a [delegate=amqp://admin@127.0.0.1:5672/, localPort=49710]
+2026-10-21T16:06:11.485+08:00  INFO 23384 --- [server] [           main] com.witpath.ServerApplication            : Started ServerApplication in 22.635 seconds (process running for 23.805)
+2026-10-21T16:06:14.451+08:00  INFO 23384 --- [server] [nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : WitPathHikariPool - Starting...
+2026-10-21T16:06:15.289+08:00  INFO 23384 --- [server] [nio-8080-exec-8] com.zaxxer.hikari.pool.HikariPool        : WitPathHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@512b8f72
+2026-10-21T16:06:15.291+08:00  INFO 23384 --- [server] [nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : WitPathHikariPool - Start completed.
+2026-10-21T16:06:16.227+08:00 DEBUG 23384 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectList   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE (username = ?)
+2026-10-21T16:06:16.285+08:00 DEBUG 23384 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectList   : ==> Parameters: demo(String)
+2026-10-21T16:06:16.401+08:00 DEBUG 23384 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectList   : <==      Total: 1
+2026-10-21T16:06:16.569+08:00 DEBUG 23384 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-21T16:06:16.571+08:00 DEBUG 23384 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-21T16:06:16.604+08:00 DEBUG 23384 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-21T16:06:16.611+08:00 DEBUG 23384 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.updateById   : ==>  Preparing: UPDATE user SET last_login_at=?, updated_at=? WHERE id=?
+2026-10-21T16:06:16.612+08:00 DEBUG 23384 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.updateById   : ==> Parameters: 2026-10-21T16:06:16.604681400(LocalDateTime), 2026-10-21T16:06:16.611725200(LocalDateTime), 2(Long)
+2026-10-21T16:06:16.670+08:00 DEBUG 23384 --- [server] [nio-8080-exec-8] c.witpath.mapper.UserMapper.updateById   : <==    Updates: 1
+2026-10-21T16:06:16.723+08:00  INFO 23384 --- [server] [nio-8080-exec-8] com.witpath.service.AuthService          : 用户登录成功：userId=2 username=demo
+2026-10-21T16:06:16.956+08:00 DEBUG 23384 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-21T16:06:16.957+08:00 DEBUG 23384 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-21T16:06:16.986+08:00 DEBUG 23384 --- [server] [io-8080-exec-10] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-21T16:06:17.009+08:00 DEBUG 23384 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-21T16:06:17.010+08:00 DEBUG 23384 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-21T16:06:17.051+08:00 DEBUG 23384 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-21T16:06:17.067+08:00 DEBUG 23384 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-21T16:06:17.067+08:00 DEBUG 23384 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-21T16:06:17.095+08:00 DEBUG 23384 --- [server] [nio-8080-exec-2] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-21T16:06:17.114+08:00 DEBUG 23384 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password_hash,nickname,avatar_url,email,phone,role,status,study_stage,study_goal,preferred_tags,last_login_at,created_at,updated_at,is_deleted FROM user WHERE id=?
+2026-10-21T16:06:17.115+08:00 DEBUG 23384 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : ==> Parameters: 2(Long)
+2026-10-21T16:06:17.144+08:00 DEBUG 23384 --- [server] [nio-8080-exec-4] c.witpath.mapper.UserMapper.selectById   : <==      Total: 1
+2026-10-21T16:06:17.161+08:00 ERROR 23384 --- [server] [nio-8080-exec-4] c.w.interceptor.GlobalExceptionHandler   : 业务异常：未配置阿里云 OSS 凭证，无法保存头像（缺失：access-key-id、access-key-secret、bucket-name）
+
+BusinessException(code=500)
+	at com.witpath.service.AvatarService.oss(AvatarService.java:160) ~[!/:0.0.1-SNAPSHOT]
+	at com.witpath.service.AvatarService.putObject(AvatarService.java:136) ~[!/:0.0.1-SNAPSHOT]
+	at com.witpath.service.AvatarService.applyPreset(AvatarService.java:108) ~[!/:0.0.1-SNAPSHOT]
+	at com.witpath.controller.UserController.applyAvatarPreset(UserController.java:65) ~[!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.19.jar!/:6.2.19]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.19.jar!/:6.2.19]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.55.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:370) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at com.witpath.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:60) ~[!/:0.0.1-SNAPSHOT]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.5.11.jar!/:6.5.11]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319) ~[spring-security-config-6.5.11.jar!/:6.5.11]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267) ~[spring-webmvc-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240) ~[spring-security-config-6.5.11.jar!/:6.5.11]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.19.jar!/:6.2.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1797) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.55.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+

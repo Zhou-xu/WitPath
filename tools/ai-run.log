@@ -1,0 +1,192 @@
+INFO:     Started server process [21272]
+INFO:     Waiting for application startup.
+2026-10-18 23:40:07,515 INFO [witpath.ai] AI 服务启动完成：model=deepseek-v4-pro-ga-260813 llm=enabled
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-10-18 23:41:25,922 INFO [langchain_openai.chat_models._client_utils] langchain-openai detected HTTP_PROXY, HTTPS_PROXY, http_proxy, https_proxy and no explicit `http_socket_options` / `http_client` / `http_async_client` / `openai_proxy`; skipping the custom `httpx` transport so httpx's env-proxy auto-detection applies. Pass `http_socket_options=[...]` to opt back into kernel-level TCP keepalive tuning on top of the env proxy.
+2026-10-18 23:41:26,252 INFO [app.agents.llm] 已加载大模型：model=deepseek-v4-pro-ga-260813 base=https://ark.cn-beijing.volces.com/api/v3
+2026-10-18 23:41:28,518 INFO [httpx] HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-18 23:41:28,570 INFO [witpath.ai] GET /health -> 200 (6058.0 ms)
+INFO:     127.0.0.1:53777 - "GET /health HTTP/1.1" 200 OK
+2026-10-18 23:41:29,494 INFO [witpath.ai] GET /health -> 200 (16.6 ms)
+INFO:     127.0.0.1:53784 - "GET /health HTTP/1.1" 200 OK
+2026-10-18 23:41:46,156 INFO [witpath.ai] GET /health -> 200 (5.9 ms)
+INFO:     127.0.0.1:53798 - "GET /health HTTP/1.1" 200 OK
+2026-10-18 23:41:49,865 INFO [httpx] HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-18 23:41:52,001 INFO [witpath.ai] POST /api/ai/documents/ingest -> 200 (3285.2 ms)
+INFO:     127.0.0.1:53798 - "POST /api/ai/documents/ingest HTTP/1.1" 200 OK
+2026-10-18 23:41:53,733 WARNING [app.services.memory] PostgreSQL 检查点不可用，回退内存模式：no pq wrapper available.
+Attempts made:
+- couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+- couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+- couldn't import psycopg 'python' implementation: libpq library not found
+2026-10-18 23:41:53,736 INFO [app.services.memory] LangGraph 检查点使用内存模式（进程重启后丢失）
+2026-10-18 23:41:53,827 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-18 23:42:12,742 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-18 23:42:12,860 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-18 23:43:11,319 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-18 23:43:11,395 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-18 23:43:11,807 INFO [httpx] HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-18 23:43:11,947 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-18 23:43:29,139 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-18 23:43:29,261 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-18 23:44:49,005 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-18 23:44:49,088 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-18 23:44:49,093 INFO [witpath.ai] POST /api/ai/analyze -> 200 (175830.5 ms)
+INFO:     127.0.0.1:53798 - "POST /api/ai/analyze HTTP/1.1" 200 OK
+2026-10-18 23:45:00,527 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-18 23:45:01,013 INFO [httpx] HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-18 23:45:01,046 INFO [witpath.ai] POST /api/ai/chat -> 200 (11381.0 ms)
+INFO:     127.0.0.1:53798 - "POST /api/ai/chat HTTP/1.1" 200 OK
+2026-10-18 23:45:03,398 INFO [witpath.ai] DELETE /api/ai/documents/8 -> 200 (2048.2 ms)
+INFO:     127.0.0.1:53798 - "DELETE /api/ai/documents/8?user_id=2 HTTP/1.1" 200 OK
+2026-10-18 23:55:58,781 INFO [witpath.ai] GET /health -> 200 (7.8 ms)
+INFO:     127.0.0.1:60372 - "GET /health HTTP/1.1" 200 OK
+2026-10-18 23:55:59,542 INFO [witpath.ai] GET /health -> 200 (5.1 ms)
+INFO:     127.0.0.1:60374 - "GET /health HTTP/1.1" 200 OK
+2026-10-19 00:36:26,952 INFO [witpath.ai] GET /health -> 200 (10.7 ms)
+INFO:     127.0.0.1:63258 - "GET /health HTTP/1.1" 200 OK
+2026-10-19 00:36:29,028 INFO [httpx] HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-19 00:36:31,735 INFO [witpath.ai] POST /api/ai/documents/ingest -> 200 (4040.9 ms)
+INFO:     127.0.0.1:63258 - "POST /api/ai/documents/ingest HTTP/1.1" 200 OK
+2026-10-19 00:36:32,102 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-19 00:36:58,087 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-19 00:36:58,182 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-19 00:37:35,173 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-19 00:37:35,231 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-19 00:37:35,650 INFO [httpx] HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-19 00:37:35,774 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-19 00:38:32,566 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-19 00:38:32,664 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-19 00:38:47,502 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-19 00:38:47,583 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-19 00:38:47,588 INFO [witpath.ai] POST /api/ai/analyze -> 200 (135588.4 ms)
+INFO:     127.0.0.1:63258 - "POST /api/ai/analyze HTTP/1.1" 200 OK
+2026-10-19 00:39:01,430 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-19 00:39:01,903 INFO [httpx] HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-19 00:39:01,914 INFO [witpath.ai] POST /api/ai/chat -> 200 (12314.8 ms)
+INFO:     127.0.0.1:63258 - "POST /api/ai/chat HTTP/1.1" 200 OK
+2026-10-19 00:39:04,207 INFO [witpath.ai] DELETE /api/ai/documents/9 -> 200 (1957.8 ms)
+INFO:     127.0.0.1:63258 - "DELETE /api/ai/documents/9?user_id=2 HTTP/1.1" 200 OK
+2026-10-19 00:40:12,546 INFO [witpath.ai] GET /health -> 200 (6.0 ms)
+INFO:     127.0.0.1:52326 - "GET /health HTTP/1.1" 200 OK
+2026-10-19 00:40:13,437 INFO [witpath.ai] GET /health -> 200 (5.4 ms)
+INFO:     127.0.0.1:62179 - "GET /health HTTP/1.1" 200 OK
+INFO:     Started server process [21916]
+INFO:     Waiting for application startup.
+2026-10-19 16:10:38,918 INFO [witpath.ai] AI 服务启动完成：model=deepseek-v4-pro-ga-260813 llm=enabled
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-10-19 16:12:33,522 INFO [langchain_openai.chat_models._client_utils] langchain-openai detected HTTP_PROXY, HTTPS_PROXY, http_proxy, https_proxy and no explicit `http_socket_options` / `http_client` / `http_async_client` / `openai_proxy`; skipping the custom `httpx` transport so httpx's env-proxy auto-detection applies. Pass `http_socket_options=[...]` to opt back into kernel-level TCP keepalive tuning on top of the env proxy.
+2026-10-19 16:12:33,795 INFO [app.agents.llm] 已加载大模型：model=deepseek-v4-pro-ga-260813 base=https://ark.cn-beijing.volces.com/api/v3
+E1019 08:12:45.807202    6336 http_connect_client_handshaker.cc:114] HTTP proxy handshake with ipv4:127.0.0.1:53743 failed: UNKNOWN: HTTP proxy returned response code 502
+2026-10-19 16:12:45,807 WARNING [app.services.retriever] Milvus 不可用，切换到内存向量库：<MilvusException: (code=2, message=Fail connecting to server on 192.168.88.130:19530, illegal connection params or server unavailable)>
+2026-10-19 16:12:45,809 INFO [witpath.ai] GET /health -> 200 (15315.7 ms)
+INFO:     127.0.0.1:63639 - "GET /health HTTP/1.1" 200 OK
+2026-10-19 16:22:45,072 INFO [witpath.ai] GET /health -> 200 (1.3 ms)
+INFO:     127.0.0.1:55952 - "GET /health HTTP/1.1" 200 OK
+INFO:     Started server process [2964]
+INFO:     Waiting for application startup.
+2026-10-20 17:04:15,624 INFO [witpath.ai] AI 服务启动完成：model=deepseek-v4-pro-ga-260813 llm=enabled
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-10-20 17:05:04,860 INFO [langchain_openai.chat_models._client_utils] langchain-openai detected HTTP_PROXY, HTTPS_PROXY, http_proxy, https_proxy and no explicit `http_socket_options` / `http_client` / `http_async_client` / `openai_proxy`; skipping the custom `httpx` transport so httpx's env-proxy auto-detection applies. Pass `http_socket_options=[...]` to opt back into kernel-level TCP keepalive tuning on top of the env proxy.
+2026-10-20 17:05:05,120 INFO [app.agents.llm] 已加载大模型：model=deepseek-v4-pro-ga-260813 base=https://ark.cn-beijing.volces.com/api/v3
+2026-10-20 17:05:09,363 WARNING [app.services.retriever] Ollama Embedding 调用失败，改用哈希向量：[WinError 10061] 由于目标计算机积极拒绝，无法连接。
+2026-10-20 17:05:10,600 INFO [app.services.retriever] 已创建 Milvus collection：witpath_docs (dim=64)
+2026-10-20 17:05:10,669 INFO [witpath.ai] GET /health -> 200 (8757.4 ms)
+INFO:     127.0.0.1:51580 - "GET /health HTTP/1.1" 200 OK
+2026-10-20 17:05:11,280 INFO [witpath.ai] GET /health -> 200 (128.2 ms)
+INFO:     127.0.0.1:53290 - "GET /health HTTP/1.1" 200 OK
+2026-10-20 17:05:26,255 INFO [witpath.ai] GET /health -> 200 (29.1 ms)
+INFO:     127.0.0.1:53300 - "GET /health HTTP/1.1" 200 OK
+2026-10-20 17:05:34,531 WARNING [app.services.retriever] Ollama Embedding 调用失败，改用哈希向量：[WinError 10061] 由于目标计算机积极拒绝，无法连接。
+2026-10-20 17:05:38,107 INFO [witpath.ai] POST /api/ai/documents/ingest -> 200 (5622.0 ms)
+INFO:     127.0.0.1:50138 - "POST /api/ai/documents/ingest HTTP/1.1" 200 OK
+2026-10-20 17:05:41,124 WARNING [app.services.memory] PostgreSQL 检查点不可用，回退内存模式：no pq wrapper available.
+Attempts made:
+- couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+- couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+- couldn't import psycopg 'python' implementation: libpq library not found
+2026-10-20 17:05:41,127 INFO [app.services.memory] LangGraph 检查点使用内存模式（进程重启后丢失）
+2026-10-20 17:05:41,735 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-20 17:06:05,926 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-20 17:06:06,303 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-20 17:07:09,538 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-20 17:07:10,059 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-20 17:07:12,112 WARNING [app.services.retriever] Ollama Embedding 调用失败，改用哈希向量：[WinError 10061] 由于目标计算机积极拒绝，无法连接。
+2026-10-20 17:07:12,480 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-20 17:07:26,548 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-20 17:07:26,773 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-20 17:07:41,090 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-20 17:07:41,359 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-20 17:07:41,362 INFO [witpath.ai] POST /api/ai/analyze -> 200 (120680.8 ms)
+INFO:     127.0.0.1:50138 - "POST /api/ai/analyze HTTP/1.1" 200 OK
+2026-10-20 17:07:53,867 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-20 17:07:55,910 WARNING [app.services.retriever] Ollama Embedding 调用失败，改用哈希向量：[WinError 10061] 由于目标计算机积极拒绝，无法连接。
+2026-10-20 17:07:55,967 INFO [witpath.ai] POST /api/ai/chat -> 200 (11596.9 ms)
+INFO:     127.0.0.1:50138 - "POST /api/ai/chat HTTP/1.1" 200 OK
+2026-10-20 17:08:01,258 INFO [witpath.ai] DELETE /api/ai/documents/1 -> 200 (1542.4 ms)
+INFO:     127.0.0.1:50138 - "DELETE /api/ai/documents/1?user_id=2 HTTP/1.1" 200 OK
+INFO:     Started server process [18696]
+INFO:     Waiting for application startup.
+2026-10-20 21:51:32,239 INFO [witpath.ai] AI 服务启动完成：model=deepseek-v4-pro-ga-260813 llm=enabled
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-10-20 21:51:56,103 INFO [langchain_openai.chat_models._client_utils] langchain-openai detected HTTP_PROXY, HTTPS_PROXY, http_proxy, https_proxy and no explicit `http_socket_options` / `http_client` / `http_async_client` / `openai_proxy`; skipping the custom `httpx` transport so httpx's env-proxy auto-detection applies. Pass `http_socket_options=[...]` to opt back into kernel-level TCP keepalive tuning on top of the env proxy.
+2026-10-20 21:51:56,347 INFO [app.agents.llm] 已加载大模型：model=deepseek-v4-pro-ga-260813 base=https://ark.cn-beijing.volces.com/api/v3
+2026-10-20 21:51:59,290 INFO [httpx] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-20 21:51:59,413 WARNING [app.services.retriever] Milvus 集合 witpath_docs 向量维度 64 与当前模型 1024 不一致，重建集合
+2026-10-20 21:52:01,187 INFO [app.services.retriever] 已创建 Milvus collection：witpath_docs (dim=1024)
+2026-10-20 21:52:01,234 INFO [witpath.ai] GET /health -> 200 (7858.5 ms)
+INFO:     127.0.0.1:52867 - "GET /health HTTP/1.1" 200 OK
+2026-10-20 21:55:40,616 INFO [witpath.ai] GET /health -> 200 (29.4 ms)
+INFO:     127.0.0.1:64074 - "GET /health HTTP/1.1" 200 OK
+2026-10-20 21:55:53,114 INFO [witpath.ai] GET /health -> 200 (54.8 ms)
+INFO:     127.0.0.1:64080 - "GET /health HTTP/1.1" 200 OK
+2026-10-20 21:55:59,165 INFO [httpx] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-20 21:56:01,913 INFO [witpath.ai] POST /api/ai/documents/ingest -> 200 (3187.9 ms)
+INFO:     127.0.0.1:64110 - "POST /api/ai/documents/ingest HTTP/1.1" 200 OK
+2026-10-20 21:56:04,163 WARNING [app.services.memory] PostgreSQL 检查点不可用，回退内存模式：no pq wrapper available.
+Attempts made:
+- couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+- couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+- couldn't import psycopg 'python' implementation: libpq library not found
+2026-10-20 21:56:04,166 INFO [app.services.memory] LangGraph 检查点使用内存模式（进程重启后丢失）
+2026-10-20 21:56:04,467 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-20 21:56:22,128 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-20 21:56:22,364 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-20 21:57:30,391 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-20 21:57:30,637 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-20 21:57:31,365 INFO [httpx] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-20 21:57:31,604 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-20 21:57:57,211 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-20 21:57:57,691 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-20 21:58:04,802 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-20 21:58:05,169 INFO [httpx] HTTP Request: POST http://127.0.0.1:8080/internal/ai/progress "HTTP/1.1 200 "
+2026-10-20 21:58:05,173 INFO [witpath.ai] POST /api/ai/analyze -> 200 (121429.1 ms)
+INFO:     127.0.0.1:64110 - "POST /api/ai/analyze HTTP/1.1" 200 OK
+2026-10-20 21:58:17,092 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-20 21:58:17,491 INFO [httpx] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-20 21:58:17,597 INFO [witpath.ai] POST /api/ai/chat -> 200 (11451.4 ms)
+INFO:     127.0.0.1:64110 - "POST /api/ai/chat HTTP/1.1" 200 OK
+2026-10-20 21:58:20,871 INFO [witpath.ai] DELETE /api/ai/documents/2 -> 200 (1652.6 ms)
+INFO:     127.0.0.1:64110 - "DELETE /api/ai/documents/2?user_id=2 HTTP/1.1" 200 OK
+2026-10-20 22:03:36,103 INFO [witpath.ai] GET /health -> 200 (26.4 ms)
+INFO:     127.0.0.1:63015 - "GET /health HTTP/1.1" 200 OK
+2026-10-20 22:17:03,722 INFO [witpath.ai] GET /health -> 200 (28.1 ms)
+INFO:     127.0.0.1:60820 - "GET /health HTTP/1.1" 200 OK
+2026-10-20 22:18:22,845 INFO [witpath.ai] GET /health -> 200 (26.0 ms)
+INFO:     127.0.0.1:58603 - "GET /health HTTP/1.1" 200 OK
+2026-10-20 22:18:27,891 INFO [witpath.ai] GET /health -> 200 (26.3 ms)
+INFO:     127.0.0.1:57283 - "GET /health HTTP/1.1" 200 OK
+2026-10-20 22:18:30,020 INFO [witpath.ai] GET /health -> 200 (24.9 ms)
+INFO:     127.0.0.1:57283 - "GET /health HTTP/1.1" 200 OK
+2026-10-20 22:23:04,373 INFO [witpath.ai] GET /health -> 200 (26.6 ms)
+INFO:     127.0.0.1:58235 - "GET /health HTTP/1.1" 200 OK
+2026-10-20 22:23:23,502 INFO [witpath.ai] GET /health -> 200 (26.4 ms)
+INFO:     127.0.0.1:51533 - "GET /health HTTP/1.1" 200 OK
+2026-10-20 22:24:32,071 INFO [httpx2] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2026-10-20 22:24:32,538 INFO [httpx] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-20 22:24:32,585 INFO [witpath.ai] POST /api/ai/chat -> 200 (8806.9 ms)
+INFO:     127.0.0.1:61392 - "POST /api/ai/chat HTTP/1.1" 200 OK

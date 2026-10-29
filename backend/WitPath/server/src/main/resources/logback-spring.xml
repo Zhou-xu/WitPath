@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  全局日志配置：
+  - CONSOLE：普通业务日志走控制台（等价 Spring Boot 默认格式）
+  - USERLOG：用户归属地/异常 IP 事件定向追加到 log/userlog.txt，
+    按天滚动保留历史，用于统计用户地区分布与异常用户 IP。
+  相对路径 log/ 基于进程工作目录，本地以 backend/WitPath 为工作目录启动时
+    即写入项目根下的 log/userlog.txt。
+-->
+<configuration>
+
+    <property name="USER_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS}|%msg%n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}  %5level --- [%thread] %logger{36} : %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="USERLOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>log/userlog.txt</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>log/userlog.%d{yyyy-MM-dd}.txt</fileNamePattern>
+            <maxHistory>90</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${USER_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 用户事件定向日志：只进 userlog 文件，不重复进控制台 -->
+    <logger name="USER_LOG" level="INFO" additivity="false">
+        <appender-ref ref="USERLOG"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>

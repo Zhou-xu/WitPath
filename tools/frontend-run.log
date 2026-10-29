@@ -1,0 +1,104 @@
+
+> witpath@0.0.0 dev
+> vite
+
+[2m23:47:26[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because lockfile has changed
+
+  [32m[1mVITE[22m v8.3.4[39m  [2mready in [0m[1m5844[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.29.1:[1m5173[22m/[39m  [2mVMware Network Adap…[22m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.88.1:[1m5173[22m/[39m  [2mVMware Network Adap…[22m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.20.10.9:[1m5173[22m/[39m   [2mWLAN[22m
+  ➜  Vue DevTools: Open http://localhost:5173/__devtools__/ as a separate window
+  ➜  Vue DevTools: Press Alt(⌥)+Shift(⇧)+D in App to toggle the Vue DevTools
+
+> witpath@0.0.0 dev
+> vite
+
+
+  [32m[1mVITE[22m v8.3.4[39m  [2mready in [0m[1m8749[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.20.10.9:[1m5173[22m/[39m   [2mWLAN[22m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.29.1:[1m5173[22m/[39m  [2mVMware Network Adap…[22m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.88.1:[1m5173[22m/[39m  [2mVMware Network Adap…[22m
+  ➜  Vue DevTools: Open http://localhost:5173/__devtools__/ as a separate window
+  ➜  Vue DevTools: Press Alt(⌥)+Shift(⇧)+D in App to toggle the Vue DevTools
+[2m16:14:03[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/api/index.ts[22m
+[2m16:20:25[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/LoginView.vue?vue&type=style&index=0&scoped=45f5edd7&lang.css[22m
+
+> witpath@0.0.0 dev
+> vite
+
+
+  [32m[1mVITE[22m v8.3.4[39m  [2mready in [0m[1m2745[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.20.10.9:[1m5173[22m/[39m   [2mWLAN[22m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.29.1:[1m5173[22m/[39m  [2mVMware Network Adap…[22m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.88.1:[1m5173[22m/[39m  [2mVMware Network Adap…[22m
+  ➜  Vue DevTools: Open http://localhost:5173/__devtools__/ as a separate window
+  ➜  Vue DevTools: Press Alt(⌥)+Shift(⇧)+D in App to toggle the Vue DevTools
+
+> witpath@0.0.0 dev
+> vite
+
+
+  [32m[1mVITE[22m v8.3.4[39m  [2mready in [0m[1m7732[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.20.10.9:[1m5173[22m/[39m   [2mWLAN[22m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.29.1:[1m5173[22m/[39m  [2mVMware Network Adap…[22m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.88.1:[1m5173[22m/[39m  [2mVMware Network Adap…[22m
+  ➜  Vue DevTools: Open http://localhost:5173/__devtools__/ as a separate window
+  ➜  Vue DevTools: Press Alt(⌥)+Shift(⇧)+D in App to toggle the Vue DevTools
+[2m16:56:01[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/AssistantView.vue[22m
+[2m16:56:01[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/DashboardView.vue, /src/views/DashboardView.vue?vue&type=style&index=0&scoped=336c5134&lang.css[22m
+[2m16:56:31[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/GoalsView.vue[22m
+[2m16:56:31[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/RecordsView.vue[22m
+[2m16:57:10[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/GoalsView.vue[22m
+[2m16:57:10[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/RecordsView.vue[22m
+[2m16:57:10[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/SettingsView.vue, /src/views/SettingsView.vue?vue&type=style&index=0&scoped=5e0b544f&lang.css[22m
+[2m16:57:23[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/SettingsView.vue[22m
+[2m16:57:43[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/GoalsView.vue[22m
+[2m16:58:29[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/ui/AppSelect.vue, /src/components/ui/AppSelect.vue?vue&type=style&index=0&scoped=8cfb2327&lang.css[22m
+[2m17:06:43[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/ui/AppToast.vue, /src/views/LoginView.vue, /src/components/layout/AppShell.vue, /src/views/DashboardView.vue, /src/components/layout/AppSidebar.vue, /src/components/layout/AppTopbar.vue, /src/views/SettingsView.vue, /src/views/RecordsView.vue, /src/views/MaterialsView.vue, /src/views/AssistantView.vue, /src/views/GoalsView.vue[22m
+[2m17:06:59[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/layout/AppShell.vue, /src/components/layout/AppShell.vue?vue&type=style&index=0&scoped=0b3b01b2&lang.css[22m
+[2m17:07:14[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/layout/AppSidebar.vue[22m
+[2m17:07:38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/layout/AppSidebar.vue[22m
+[2m17:07:38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/layout/AppSidebar.vue?vue&type=style&index=0&scoped=0355add9&lang.css[22m
+[2m17:08:02[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/layout/AppTopbar.vue[22m
+[2m17:08:02[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/layout/AppTopbar.vue?vue&type=style&index=0&scoped=855a51f8&lang.css[22m
+[2m17:09:22[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/AssistantView.vue?vue&type=style&index=0&scoped=5d240c14&lang.css[22m
+[2m17:09:22[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/GoalsView.vue?vue&type=style&index=0&scoped=7bb35f32&lang.css[22m
+[2m17:09:22[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/SettingsView.vue?vue&type=style&index=0&scoped=5e0b544f&lang.css[22m
+[2m17:09:22[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/DashboardView.vue?vue&type=style&index=0&scoped=336c5134&lang.css[22m
+
+> witpath@0.0.0 dev
+> vite
+
+
+  [32m[1mVITE[22m v8.3.4[39m  [2mready in [0m[1m2565[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.20.10.9:[1m5173[22m/[39m   [2mWLAN[22m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.29.1:[1m5173[22m/[39m  [2mVMware Network Adap…[22m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.88.1:[1m5173[22m/[39m  [2mVMware Network Adap…[22m
+  ➜  Vue DevTools: Open http://localhost:5173/__devtools__/ as a separate window
+  ➜  Vue DevTools: Press Alt(⌥)+Shift(⇧)+D in App to toggle the Vue DevTools
+[2m17:25:04[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles/ui.css[22m
+[2m17:25:04[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/views/GoalsView.vue?vue&type=style&index=0&scoped=7bb35f32&lang.css[22m
+
+> witpath@0.0.0 dev
+> vite
+
+
+  [32m[1mVITE[22m v8.3.4[39m  [2mready in [0m[1m7772[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.29.1:[1m5173[22m/[39m  [2mVMware Network Adap…[22m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.88.1:[1m5173[22m/[39m  [2mVMware Network Adap…[22m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://10.254.30.35:[1m5173[22m/[39m  [2mWLAN[22m
+  ➜  Vue DevTools: Open http://localhost:5173/__devtools__/ as a separate window
+  ➜  Vue DevTools: Press Alt(⌥)+Shift(⇧)+D in App to toggle the Vue DevTools

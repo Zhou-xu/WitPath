@@ -1,0 +1,206 @@
+/* ============================================================
+   WitPath 全局动画
+   - fade-in 系列关键帧（纯 CSS 场景使用，如背景装饰）
+   - .fade-in / .fade-in--visible 过渡类（FadeIn.vue 组件使用）
+   - .page-fade-* 路由页面过渡（App.vue 的 RouterView 使用）
+   ============================================================ */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--fade-distance, 24px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-1 * var(--fade-distance, 24px)));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(var(--fade-distance, 24px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(calc(-1 * var(--fade-distance, 24px)));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------- FadeIn.vue：初始隐藏，挂载后过渡到可见 ---------- */
+.fade-in {
+  opacity: 0;
+  transform: var(--fade-transform, translateY(24px));
+  transition:
+    opacity var(--fade-duration, 600ms) var(--fade-easing, ease) var(--fade-delay, 0ms),
+    transform var(--fade-duration, 600ms) var(--fade-easing, ease) var(--fade-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.fade-in--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 动画结束后的清理态：卸掉 will-change 与 transform */
+.fade-in--done {
+  will-change: auto;
+  transform: none;
+}
+
+/* ---------- 路由页面过渡 ---------- */
+.page-fade-enter-active,
+.page-fade-leave-active {
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
+}
+
+.page-fade-enter-from {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.page-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* ---------- 用户偏好减少动态效果时，直接显示终态 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .fade-in--visible {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .page-fade-enter-active,
+  .page-fade-leave-active {
+    transition: none;
+  }
+
+  .page-fade-enter-from,
+  .page-fade-leave-to {
+    opacity: 1;
+    transform: none;
+  }
+
+  .wp-float,
+  .wp-float-slow,
+  .wp-twinkle {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   WitPath 首页装饰动画
+   ============================================================ */
+
+/* 轻柔上下悬浮 —— 用于插画与悬浮卡片 */
+@keyframes wp-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes wp-float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* 星光闪烁 —— 用于插画中的飞鸟/星点 */
+@keyframes wp-twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* 按钮扫光 */
+@keyframes wp-sheen {
+  from {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  to {
+    transform: translateX(220%) skewX(-18deg);
+  }
+}
+
+/* 诗词弹幕：横向匀速轮播（每条泳道内容复制一份，位移 -50% 实现无缝循环） */
+@keyframes wp-danmaku {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* 悬浮指示点呼吸 */
+@keyframes wp-breathe {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+.wp-float {
+  animation: wp-float 6s ease-in-out infinite;
+}
+
+.wp-float-slow {
+  animation: wp-float-slow 8s ease-in-out infinite;
+}
+
+.wp-twinkle {
+  animation: wp-twinkle 3s ease-in-out infinite;
+}

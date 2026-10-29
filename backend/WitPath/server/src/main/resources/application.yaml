@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: server
+  profiles:
+    # secret profile 对应 src/main/resources/application-secret.yaml（本地敏感配置，已忽略追踪）
+    # 该文件不存在时 Spring 会静默跳过，不影响本地启动
+    active: dev,secret
+    # 注意：不要再额外用 spring.config.import 引入同一个文件。
+    # 同一文件被「profile 激活」和「import」同时加载时，import 的那份优先级低于
+    # application-dev.yaml 的 ${OSS_ACCESS_KEY_ID:} 空占位，导致凭证被空值覆盖。
+    # 如需外部覆盖，用命令行 --spring.config.additional-location=file:./config/ 或环境变量。
+
+witpath:
+  jackson:
+    # 前端 JSON 中长整型的输出策略：
+    #   auto（默认）- 仅超出 JS 安全整数范围（2^53-1）的 Long 输出为字符串，
+    #                 雪花 ID（如登录会话标识）自动中招，自增主键/计数/时间戳仍为数字
+    #   all        - 所有 Long 一律输出为字符串（前端需全部按字符串处理）
+    # 仅作用于发给浏览器的 MVC 响应；后端调 AI 服务的 RestClient 与 RabbitMQ
+    # 消息转换器使用各自独立的 ObjectMapper，服务间通信的数字契约不受影响。
+    long-to-string: auto
+
+  # 注册用户归属地日志：注册成功后独立线程池异步查询 IP 归属地，
+  # 追加写入 log/userlog.txt，用于统计用户地区分布与异常用户 IP
+  user-geo-log:
+    enabled: true
+    # 首选源：百度 IP 库（国内省市级精度高），{ip} 为占位符
+    baidu-geo-api-url: "https://opendata.baidu.com/api.php?query={ip}&co=&resource_id=6006&oe=utf8"
+    # 回退源：ip-api.com（百度查询失败时使用，境外覆盖较好）；
+    # 换供应商需保证返回字段兼容 status/country/regionName/city/isp
+    geo-api-url: "http://ip-api.com/json/{ip}?lang=zh-CN&fields=status,message,country,regionName,city,isp,query"
+    connect-timeout-ms: 3000
+    read-timeout-ms: 5000
+    # 统计窗口内同 IP 注册达到该次数判定为异常（批量注册）
+    same-ip-threshold: 3
+    same-ip-window-hours: 24

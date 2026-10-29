@@ -1,0 +1,344 @@
+/* ============================================================================
+   通用组件样式：卡片、标签、表单、骨架屏、表格等
+   与 tokens.css 搭配使用，保证全站视觉一致
+   ========================================================================== */
+
+/* 控件基础重置：去掉浏览器默认边框与灰底，保证无类名按钮也一致 */
+button {
+  font: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-xs);
+  padding: var(--sp-5);
+  transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+
+.card--interactive:hover {
+  border-color: var(--c-border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card--flush {
+  padding: 0;
+  overflow: hidden;
+}
+
+.card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+
+.card__title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.card__desc {
+  margin-top: 2px;
+  font-size: 12.5px;
+  color: var(--c-text-muted);
+}
+
+/* 标签 */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: var(--r-chip);
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap;
+  background: var(--c-surface-muted);
+  color: var(--c-text-secondary);
+}
+
+.badge--success {
+  background: var(--c-success-soft);
+  color: var(--c-success);
+}
+
+.badge--warning {
+  background: var(--c-warning-soft);
+  color: var(--c-warning);
+}
+
+.badge--danger {
+  background: var(--c-danger-soft);
+  color: var(--c-danger);
+}
+
+.badge--info {
+  background: var(--c-info-soft);
+  color: var(--c-info);
+}
+
+.badge--accent {
+  background: var(--c-accent-soft);
+  color: var(--c-accent);
+}
+
+.badge--violet {
+  background: var(--c-violet-soft);
+  color: var(--c-violet);
+}
+
+/* 表单控件（不带 label 的裸控件，供 AppField 复用） */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field__label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--c-text-secondary);
+}
+
+.field__label span {
+  color: var(--c-danger);
+}
+
+.field__error {
+  font-size: 12px;
+  color: var(--c-danger);
+}
+
+.control {
+  width: 100%;
+  padding: 9px 12px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-control);
+  color: var(--c-text);
+  transition: border-color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease);
+}
+
+.control:hover:not(:disabled) {
+  border-color: rgba(33, 29, 23, 0.24);
+}
+
+.control:focus {
+  outline: none;
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px var(--c-accent-ring);
+}
+
+.control:disabled {
+  background: var(--c-surface-muted);
+  color: var(--c-text-muted);
+  cursor: not-allowed;
+}
+
+.control::placeholder {
+  color: var(--c-text-muted);
+}
+
+textarea.control {
+  min-height: 88px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+select.control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5L6 8l3-3.5' fill='none' stroke='%23968c7e' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+/* 骨架屏 */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-surface-muted);
+  border-radius: 8px;
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75), transparent);
+  animation: skeleton-shimmer 1.4s infinite;
+}
+
+@keyframes skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* 分割线与区块标题 */
+.divider {
+  height: 1px;
+  background: var(--c-border);
+  border: 0;
+  margin: var(--sp-4) 0;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--c-text-muted);
+  text-transform: uppercase;
+}
+
+/* 进度条 */
+.progress {
+  position: relative;
+  height: 6px;
+  background: var(--c-surface-sunken);
+  border-radius: var(--r-chip);
+  overflow: hidden;
+}
+
+.progress__bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--c-accent), #cf9247);
+  border-radius: var(--r-chip);
+  transition: width var(--dur-slow) var(--ease);
+}
+
+.progress--success .progress__bar {
+  background: linear-gradient(90deg, var(--c-success), #6f9b7a);
+}
+
+/* 列表行 */
+.list-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 12px var(--sp-5);
+  border-bottom: 1px solid var(--c-border);
+  transition: background var(--dur-fast) var(--ease);
+}
+
+.list-row:last-child {
+  border-bottom: 0;
+}
+
+.list-row:hover {
+  background: var(--c-bg-subtle);
+}
+
+/* 空状态容器 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  padding: var(--sp-12) var(--sp-6);
+  text-align: center;
+  color: var(--c-text-muted);
+}
+
+/* Markdown 渲染（AI 建议区域） */
+.markdown {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--c-text-secondary);
+}
+
+.markdown h3 {
+  margin: var(--sp-4) 0 var(--sp-2);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+.markdown ul {
+  list-style: disc;
+  padding-left: 18px;
+  margin: 6px 0;
+}
+
+.markdown ol {
+  list-style: decimal;
+  padding-left: 18px;
+  margin: 6px 0;
+}
+
+.markdown p {
+  margin: 6px 0;
+}
+
+.markdown strong {
+  color: var(--c-text);
+  font-weight: 600;
+}
+
+.markdown code {
+  padding: 1px 5px;
+  background: var(--c-surface-muted);
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+/* 路由过渡 */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+/* 弹窗过渡 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity var(--dur) var(--ease);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.pop-enter-active,
+.pop-leave-active {
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.pop-enter-from,
+.pop-leave-to {
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+}
+
+/* 移动端：输入类控件字号不低于 16px，避免 iOS Safari 聚焦时自动放大页面 */
+@media (max-width: 900px) {
+  .control,
+  input:not([type='checkbox']):not([type='radio']),
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}

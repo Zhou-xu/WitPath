@@ -1,0 +1,203 @@
+# =============================================================================
+# WitPath 本地基础设施编排（一键拉起中间件）
+#
+# 用法：
+#   cd docker
+#   docker compose up -d            # 首次启动（会拉取镜像，耗时较久）
+#   docker compose ps               # 查看健康状态
+#   docker compose logs -f milvus   # 跟踪某个组件日志
+#   docker compose down             # 停止并保留数据卷
+#   docker compose down -v          # 停止并清空数据（谨慎）
+#
+# 端口与账号均已与 backend/WitPath/server/src/main/resources/application-dev.yaml
+# 及 Agent/.env 的默认值对齐，启动后无需修改业务配置即可直接联调。
+#
+# 依赖服务就绪后需手动拉取一次向量模型（仅需一次，数据卷会持久保存）：
+#   docker exec -it witpath-ollama ollama pull bge-m3
+#
+# 说明：Ollama / Milvus 是 AI 侧可选依赖。若只用规则引擎 + 内存向量（PG_ENABLED=false、
+# MILVUS_ENABLED=false），可只启动 mysql / redis / rabbitmq：
+#   docker compose up -d mysql redis rabbitmq
+# =============================================================================
+
+name: witpath
+
+services:
+  # ---------------------------------------------------------------- 业务主库
+  mysql:
+    image: mysql:8.0
+    container_name: witpath-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+      MYSQL_DATABASE: "WitPath"
+      TZ: Asia/Shanghai
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-time-zone=+08:00
+      - --lower_case_table_names=1
+    volumes:
+      - mysql-data:/var/lib/mysql
+      # 首次启动自动执行建表/初始化脚本（database/ 下的 schema.sql、data.sql 等）
+      - ../database:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-p123456"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+
+  # ------------------------------------------------------- 缓存 / 登录验证码
+  redis:
+    image: redis:7-alpine
+    container_name: witpath-redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory", "512mb", "--maxmemory-policy", "allkeys-lru"]
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  # ---------------------------------------------------------- AI 任务消息队列
+  rabbitmq:
+    image: rabbitmq:3.13-management-alpine
+    container_name: witpath-rabbitmq
+    ports:
+      - "5672:5672"    # AMQP
+      - "15672:15672"  # 管理台 http://localhost:15672  admin / admin123
+    environment:
+      RABBITMQ_DEFAULT_USER: "admin"
+      RABBITMQ_DEFAULT_PASS: "admin123"
+      RABBITMQ_DEFAULT_VHOST: "/"
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 15s
+      timeout: 8s
+      retries: 12
+    restart: unless-stopped
+
+  # ------------------------------------------- LangGraph 检查点（AI 服务持久化）
+  postgres:
+    image: postgres:16-alpine
+    container_name: witpath-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "admin123"
+      POSTGRES_DB: "witpath_ai"
+      TZ: Asia/Shanghai
+      PGTZ: Asia/Shanghai
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d witpath_ai"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+
+  # ------------------------------------------------------------ Milvus 向量库
+  # 官方 standalone 三件套：etcd（元数据）+ minio（对象存储）+ milvus（服务）
+  etcd:
+    image: quay.io/coreos/etcd:v3.5.16
+    container_name: witpath-etcd
+    environment:
+      ETCD_AUTO_COMPACTION_MODE: "revision"
+      ETCD_AUTO_COMPACTION_RETENTION: "1000"
+      ETCD_QUOTA_BACKEND_BYTES: "4294967296"
+      ETCD_SNAPSHOT_COUNT: "50000"
+    volumes:
+      - etcd-data:/etcd
+    command: etcd -advertise-client-urls=http://etcd:2379 -listen-client-urls http://0.0.0.0:2379
+    healthcheck:
+      test: ["CMD", "etcdctl", "endpoint", "health"]
+      interval: 20s
+      timeout: 10s
+      retries: 10
+    restart: unless-stopped
+
+  minio:
+    image: minio/minio:RELEASE.2024-05-28T17-19-04Z
+    container_name: witpath-minio
+    environment:
+      MINIO_ACCESS_KEY: "minioadmin"
+      MINIO_SECRET_KEY: "minioadmin"
+    ports:
+      - "9001:9001"   # 控制台
+      - "9000:9000"   # API
+    volumes:
+      - minio-data:/minio_data
+    command: minio server /minio_data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 20s
+      timeout: 10s
+      retries: 10
+    restart: unless-stopped
+
+  milvus:
+    image: milvusdb/milvus:v2.5.4
+    container_name: witpath-milvus
+    command: ["milvus", "run", "standalone"]
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      ETCD_ENDPOINTS: etcd:2379
+      MINIO_ADDRESS: minio:9000
+    volumes:
+      - milvus-data:/var/lib/milvus
+    ports:
+      - "19530:19530"   # gRPC / HTTP（Agent/.env: MILVUS_PORT）
+      - "9091:9091"     # 健康检查
+    depends_on:
+      - etcd
+      - minio
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 20s
+      timeout: 10s
+      retries: 15
+    restart: unless-stopped
+
+  # --------------------------------------------- 本地向量模型（bge-m3, 1024 维）
+  ollama:
+    image: ollama/ollama:latest
+    container_name: witpath-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 20s
+      timeout: 10s
+      retries: 10
+    restart: unless-stopped
+    # 无 GPU 时删掉下面 deploy 段即可，纯 CPU 也能跑 bge-m3（较慢）
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+volumes:
+  mysql-data:
+  redis-data:
+  rabbitmq-data:
+  postgres-data:
+  etcd-data:
+  minio-data:
+  milvus-data:
+  ollama-data:

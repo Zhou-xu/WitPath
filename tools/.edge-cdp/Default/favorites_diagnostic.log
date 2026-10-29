@@ -1,0 +1,71 @@
+2026-10-21 08:43:59.820: [INFO] CurrentProfilePath: D:\Desktop\grass\学途知行AI协作平台\tools\.edge-cdp\Default
+2026-10-21 08:43:59.820: [INFO] Profiles total count: 1
+2026-10-21 08:43:59.820: [INFO] Profile: name=用户配置 1 path=D:\Desktop\grass\学途知行AI协作平台\tools\.edge-cdp\Default lastActive=null
+2026-10-21 08:43:59.820: [INFO] LastUsedProfileDir: D:\Desktop\grass\学途知行AI协作平台\tools\.edge-cdp\Default
+2026-10-21 08:43:59.820: [INFO] VisibilityChanged: 0
+2026-10-21 08:43:59.854: [INFO] OnDoneLoading sync enabled: 0
+2026-10-21 08:43:59.854: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-21 08:43:59.854: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-21 08:43:59.854: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-21 08:43:59.949: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-21 08:44:02.585: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-21 08:44:02.590: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-21 08:44:02.598: [INFO] Primary account changed.
+2026-10-21 08:44:02.598: [INFO] OnPrimaryAccountChanged PrimaryAccountChangeEvent::Type::kSet
+2026-10-21 08:44:02.613: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-21 08:44:02.640: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-21 08:44:09.021: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.027: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.027: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.030: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.036: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.036: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.037: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.038: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.038: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.039: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.040: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.040: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.041: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.041: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.041: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.042: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.042: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.042: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.048: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.048: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.049: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.049: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.051: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.051: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.051: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.053: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.053: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.054: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.054: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.054: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.056: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-21 08:44:09.064: [INFO] BookmarkBarPrefChanged showBar=0 showBarNTP=0
+2026-10-21 08:44:09.519: [INFO] Sync initialization duration: 6688ms
+2026-10-21 09:06:18.386: [INFO] CurrentProfilePath: D:\Desktop\grass\学途知行AI协作平台\tools\.edge-cdp\Default
+2026-10-21 09:06:18.386: [INFO] Profiles total count: 1
+2026-10-21 09:06:18.386: [INFO] Profile: name=个人 path=D:\Desktop\grass\学途知行AI协作平台\tools\.edge-cdp\Default lastActive=2026-10-21T08:43:59.832Z
+2026-10-21 09:06:18.386: [INFO] LastUsedProfileDir: D:\Desktop\grass\学途知行AI协作平台\tools\.edge-cdp\Default
+2026-10-21 09:06:18.386: [INFO] MostRecentlyActiveProfile: name=个人 path=D:\Desktop\grass\学途知行AI协作平台\tools\.edge-cdp\Default lastActive=2026-10-21T08:43:59.832Z
+2026-10-21 09:06:18.386: [INFO] VisibilityChanged: 0
+2026-10-21 09:06:18.423: [INFO] OnDoneLoading sync enabled: 1
+2026-10-21 09:06:18.423: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-21 09:06:18.423: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-21 09:06:18.423: [INFO] BookmarksSnapshot Startup total=25 bar=3 other=12 mobile=0 showBar=0 showBarNTP=0
+2026-10-21 09:06:18.575: [INFO] Sync initialization duration: 156ms
+2026-10-23 09:38:23.086: [INFO] CurrentProfilePath: D:\Desktop\grass\学途知行AI协作平台\tools\.edge-cdp\Default
+2026-10-23 09:38:23.086: [INFO] Profiles total count: 1
+2026-10-23 09:38:23.086: [INFO] Profile: name=个人 path=D:\Desktop\grass\学途知行AI协作平台\tools\.edge-cdp\Default lastActive=2026-10-21T09:06:18.404Z
+2026-10-23 09:38:23.086: [INFO] LastUsedProfileDir: D:\Desktop\grass\学途知行AI协作平台\tools\.edge-cdp\Default
+2026-10-23 09:38:23.086: [INFO] MostRecentlyActiveProfile: name=个人 path=D:\Desktop\grass\学途知行AI协作平台\tools\.edge-cdp\Default lastActive=2026-10-21T09:06:18.404Z
+2026-10-23 09:38:23.086: [INFO] VisibilityChanged: 0
+2026-10-23 09:38:23.166: [INFO] OnDoneLoading sync enabled: 1
+2026-10-23 09:38:23.166: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-23 09:38:23.166: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-23 09:38:23.166: [INFO] BookmarksSnapshot Startup total=25 bar=3 other=12 mobile=0 showBar=0 showBarNTP=0
+2026-10-23 09:38:23.410: [INFO] Sync initialization duration: 247ms

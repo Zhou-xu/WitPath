@@ -1,0 +1,1 @@
+2026-10-24 20:39:35.294|event=USER_REGISTER|userId=4|username=111|ip=211.141.181.205|country=中国|province=广东|city=广州市|isp=China Mobile|sameIpCount=1|abnormal=false|reason=-

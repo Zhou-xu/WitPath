@@ -1,0 +1,26 @@
+# IDE
+.idea
+*.iml
+.vscode
+.claudecode
+.workbuddy
+.cache
+
+# 本地敏感信息（禁止提交）
+.env
+Agent/.env
+*.local
+config/application-secret.yaml
+**/src/main/resources/application-secret.yaml
+storage/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 前端产物
+node_modules
+dist
+.DS_Store
